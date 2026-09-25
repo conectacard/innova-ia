@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Final - Nivel 1 | PWA InnovaPro IA</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 5px solid #2563EB; }
+        h1, h2 { color: #2563EB; text-align: center; }
+        .question { margin-bottom: 20px; padding: 15px; background: #fafafa; border-left: 4px solid #2563EB; border-radius: 4px; }
+        .question p { font-weight: bold; margin-bottom: 10px; }
+        label { display: block; margin-bottom: 5px; cursor: pointer; }
+        button { display: block; width: 100%; background: #2563EB; color: #fff; border: none; padding: 12px; font-size: 16px; border-radius: 4px; cursor: pointer; margin-top: 20px; font-weight: bold; }
+        button:hover { background: #1D4ED8; }
+        #result-section, #diploma-section { display: none; text-align: center; margin-top: 30px; padding: 20px; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 4px; }
+        .input-group { margin: 15px 0; text-align: left; }
+        .input-group label { font-weight: bold; }
+        .input-group input { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Examen Final - Nivel 1</h1>
+    <h2>El Universo de la IA Generativa, Despliegue Web y Multimedia Básica</h2>
+    <p style="text-align: center;">Responde las 10 preguntas. Necesitas al menos un 70% de aciertos para desbloquear tu diploma institucional.</p>
+
+    <form id="quiz-form">
+        <!-- Pregunta 1 -->
+        <div class="question"><p>1. ¿Qué organización o informe destaca de manera relevante en el panorama actual sobre el impacto y transformación de la tecnología y la IA en el empleo?</p>
+            <label><input type="radio" name="q1" value="a"> A) El World Economic Forum (Foro Económico Mundial).</label>
+            <label><input type="radio" name="q1" value="b"> B) Una liga de videojuegos local.</label>
+            <label><input type="radio" name="q1" value="c"> C) Un comité de diseño gráfico tradicional.</label>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="question"><p>2. ¿Cómo se le llama a la instrucción o texto estructurado que le escribimos a la inteligencia artificial para guiar su respuesta de forma efectiva?</p>
+            <label><input type="radio" name="q2" value="a"> A) Prompt (Ingeniería de prompts).</label>
+            <label><input type="radio" name="q2" value="b"> B) Cable de red.</label>
+            <label><input type="radio" name="q2" value="c"> C) Script de base de datos.</label>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="question"><p>3. ¿Cuál es la principal característica distintiva de <b>Perplexity</b> dentro del ecosistema de IAs analizado en este nivel?</p>
+            <label><input type="radio" name="q3" value="a"> A) Que funciona únicamente como reproductor de música.</label>
+            <label><input type="radio" name="q3" value="b"> B) Que actúa como motor de búsqueda avanzado en tiempo real mostrando las fuentes de información.</label>
+            <label><input type="radio" name="q3" value="c"> C) Que solo permite generar imágenes artísticas.</label>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="question"><p>4. ¿Qué función principal cumplen herramientas como <b>GitHub Copilot</b> y <b>DeepSeek</b> en el desarrollo tecnológico?</p>
+            <label><input type="radio" name="q4" value="a"> A) Apoyar de forma especializada en la programación, análisis lógico y generación de código.</label>
+            <label><input type="radio" name="q4" value="b"> B) Imprimir documentos en formato físico.</label>
+            <label><input type="radio" name="q4" value="c"> C) Medir la señal de internet inalámbrico.</label>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="question"><p>5. ¿Cuál es la utilidad pedagógica del <b>Cuadro Comparativo Maestro</b> visto en este nivel?</p>
+            <label><input type="radio" name="q5" value="a"> A) Identificar las diferencias exactas de las 5 IAs principales (ChatGPT, Gemini, Perplexity, GitHub Copilot y DeepSeek) y saber cuándo utilizar cada una.</label>
+            <label><input type="radio" name="q5" value="b"> B) Registrar las asistencias diarias de los alumnos en una libreta.</label>
+            <label><input type="radio" name="q5" value="c"> C) Calcular presupuestos de contabilidad empresarial.</label>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="question"><p>6. ¿Qué herramientas se utilizaron para la creación de locuciones limpias y grabaciones rápidas en la nube dentro del módulo multimedia?</p>
+            <label><input type="radio" name="q6" value="a"> A) Google Traductor (TTS) y Vocaroo.</label>
+            <label><input type="radio" name="q6" value="b"> B) Hojas de cálculo y editores de texto plano.</label>
+            <label><input type="radio" name="q6" value="c"> C) Calculadoras científicas avanzadas.</label>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="question"><p>7. ¿Qué tipo de recursos éticos y seguros se integraron desde plataformas como <b>Pixabay</b>, combinados con la experimentación musical en <b>Suno / Udio</b>?</p>
+            <label><input type="radio" name="q7" value="a"> A) Imágenes, videos libres de derechos y generación de canciones mediante IA.</label>
+            <label><input type="radio" name="q7" value="b"> B) Medicamentos y recetas médicas digitales.</label>
+            <label><input type="radio" name="q7" value="c"> C) Códigos fuente de sistemas operativos cerrados.</label>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="question"><p>8. ¿Qué significa la sigla <b>LLM</b> en el contexto de los modelos de inteligencia artificial?</p>
+            <label><input type="radio" name="q8" value="a"> A) Lector de Libros Magnéticos.</label>
+            <label><input type="radio" name="q8" value="b"> B) Large Language Model (Modelo de Lenguaje Grande).</label>
+            <label><input type="radio" name="q8" value="c"> C) Línea Local de Modem.</label>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="question"><p>9. ¿Qué ventaja ofrece <b>Gemini</b> al estar respaldado por el ecosistema tecnológico de Google?</p>
+            <label><input type="radio" name="q9" value="a"> A) Permite realizar llamadas automáticas de telefonía satelital.</label>
+            <label><input type="radio" name="q9" value="b"> B) Se integra fluidamente con las herramientas de búsqueda y servicios de Google.</label>
+            <label><input type="radio" name="q9" value="c"> C) Funciona exclusivamente sin conexión a internet.</label>
+        </div>
+
+        <!-- Pregunta 10 -->
+        <div class="question"><p>10. ¿Cuáles son los servidores gratuitos utilizados para la práctica de <b>despliegue web</b> al cierre de este nivel?</p>
+            <label><input type="radio" name="q10" value="a"> A) Netlify, Surge.sh y Cloudflare Pages.</label>
+            <label><input type="radio" name="q10" value="b"> B) Reproductores de DVD y consolas de videojuegos.</label>
+            <label><input type="radio" name="q10" value="c"> C) Impresoras láser de red.</label>
+        </div>
+
+        <button type="button" onclick="evaluarExamen()">Enviar Examen</button>
+    </form>
+
+    <!-- Sección de Resultados y Diploma -->
+    <div id="result-section">
+        <h3 id="result-title"></h3>
+        <p id="result-msg"></p>
+        
+        <div id="portfolio-container" style="display:none;">
+            <div class="input-group">
+                <label for="student-name">Nombre Completo del Alumno:</label>
+                <input type="text" id="student-name" placeholder="Ej. Juan Pérez López">
+            </div>
+            <button type="button" onclick="generarDiplomaJPG()">Generar y Descargar mi Diploma</button>
+        </div>
+    </div>
+</div>
+
+<canvas id="canvas-diploma" style="display:none;"></canvas>
+
+<script>
+    const respuestasCorrectas = {
+        q1: 'a', q2: 'a', q3: 'b', q4: 'a', q5: 'a',
+        q6: 'a', q7: 'a', q8: 'b', q9: 'b', q10: 'a'
+    };
+
+    function evaluarExamen() {
+        let aciertos = 0;
+        let total = 10;
+        let respondidas = 0;
+
+        for (let key in respuestasCorrectas) {
+            let seleccionada = document.querySelector(`input[name="${key}"]:checked`);
+            if (seleccionada) {
+                respondidas++;
+                if (seleccionada.value === respuestasCorrectas[key]) {
+                    aciertos++;
+                }
+            }
+        }
+
+        if (respondidas < total) {
+            alert("Por favor responde todas las preguntas antes de enviar.");
+            return;
+        }
+
+        let porcentaje = (aciertos / total) * 100;
+        
+        document.getElementById('quiz-form').style.display = 'none';
+        let resSection = document.getElementById('result-section');
+        resSection.style.display = 'block';
+
+        let title = document.getElementById('result-title');
+        let msg = document.getElementById('result-msg');
+        let portContainer = document.getElementById('portfolio-container');
+
+        if (porcentaje >= 70) {
+            title.style.color = "#10B981";
+            title.innerText = "¡Excelente Trabajo, Nivel 1 Aprobado!";
+            msg.innerText = `Obtuviste ${porcentaje.toFixed(0)}% de aciertos (${aciertos}/${total}). ¡Felicidades por completar los fundamentos! Ingresa tu nombre para obtener tu diploma.`;
+            portContainer.style.display = 'block';
+        } else {
+            title.style.color = "#EF4444";
+            title.innerText = "Sigue practicando";
+            msg.innerText = `Obtuviste ${porcentaje.toFixed(0)}% (${aciertos}/${total}). Necesitas al menos un 70% (7 aciertos) para aprobar. ¡Repasa la guía y vuelve a intentarlo!`;
+        }
+    }
+
+    function generarDiplomaJPG() {
+        const nombreAlumno = document.getElementById('student-name').value.trim();
+
+        if (!nombreAlumno) {
+            alert("Por favor escribe tu nombre completo.");
+            return;
+        }
+
+        const canvas = document.getElementById('canvas-diploma');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+
+        img.src = 'diploma_base.jpg';
+
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            ctx.drawImage(img, 0, 0);
+
+            ctx.font = "bold 55px Arial, sans-serif";
+            ctx.fillStyle = "#222222";
+            ctx.textAlign = "center";
+
+            const xCoord = canvas.width / 2;
+            const yCoord = canvas.height * 0.47; 
+
+            ctx.fillText(nombreAlumno, xCoord, yCoord);
+
+            const link = document.createElement('a');
+            link.download = `Diploma_Nivel1_${nombreAlumno.replace(/\s+/g, '_')}.jpg`;
+            link.href = canvas.toDataURL('image/jpeg', 0.95);
+            link.click();
+
+            alert("¡Diploma del Nivel 1 generado y descargado con éxito!");
+        };
+
+        img.onerror = function() {
+            alert("No se pudo cargar 'diploma_base.jpg'. Asegúrate de que el archivo esté en la misma carpeta.");
+        };
+    }
+</script>
+
+</body>
+</html>

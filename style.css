@@ -1,0 +1,448 @@
+/* ================= PALETA LUMINOSA Y MODERNA CON MARCOS VIVOS Y LUZ DINÁMICA ================= */
+:root {
+    --fondo-general: #E2E8F0;      
+    --fondo-tarjeta: #FFFFFF;      
+    --color-principal: #2563EB;    /* Azul eléctrico brillante */
+    --color-acento: #F97316;       /* Naranja vibrante juvenil */
+    --color-exito: #10B981;        
+    --texto-oscuro: #0F172A;       
+    --texto-suave: #475569;        
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #CBD5E1 0%, #F1F5F9 100%);
+    color: var(--texto-oscuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ================= 2 & 4. CONTENEDOR PRINCIPAL CON MARCO LLAMATIVO Y LUZ ESPOÁRDICA ================= */
+.app-container {
+    width: 100%;
+    max-width: 920px;
+    height: 96vh;
+    background: var(--fondo-tarjeta);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2), 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 3px solid #3B82F6; /* Marco principal destacado y bonito */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Línea de luz brillante que cruza esporádicamente el panel principal */
+.app-container::after {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 220%;
+    height: 220%;
+    background: linear-gradient(
+        45deg,
+        transparent 45%,
+        rgba(37, 99, 235, 0.15) 50%,
+        transparent 55%
+    );
+    transform: rotate(35deg);
+    pointer-events: none;
+    animation: luzEssporadica 6s infinite ease-in-out;
+}
+
+@keyframes luzEssporadica {
+    0% { transform: translateY(-120%) rotate(35deg); opacity: 0; }
+    25% { opacity: 1; }
+    50% { transform: translateY(120%) rotate(35deg); opacity: 0; }
+    100% { transform: translateY(120%) rotate(35deg); opacity: 0; }
+}
+
+/* HEADER HOME */
+.app-header {
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+}
+
+.logo-img {
+    max-width: 175px;
+    height: auto;
+    margin-bottom: 2px;
+    filter: drop-shadow(0 2px 5px rgba(37, 99, 235, 0.2));
+}
+
+.eslogan {
+    font-size: 12px;
+    color: var(--color-principal);
+    font-weight: 700;
+    font-style: italic;
+    display: block;
+}
+
+.home-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ================= 2. MARCO BONITO Y DEFINIDO PARA EL VIDEO ================= */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 48%;
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+    border: 3px solid #2563EB; /* Marco fuerte y atractivo */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.wef-text {
+    font-size: 12px;
+    text-align: center;
+    color: var(--texto-suave);
+    font-weight: 600;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* BOTONES CON MARCOS VIVOS */
+.btn-app {
+    background: #F8FAFC;
+    color: var(--texto-oscuro);
+    border: 2px solid #CBD5E1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+}
+
+.btn-app:hover {
+    background: var(--color-principal);
+    color: #FFFFFF;
+    border-color: var(--color-principal);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
+}
+
+.btn-demo { background: #EFF6FF; color: #1D4ED8; border-color: #93C5FD; }
+.btn-demo:hover { background: #1D4ED8; color: #fff; }
+
+.btn-curso { 
+    grid-column: span 2; 
+    background: linear-gradient(135deg, #F97316, #EA580C); 
+    color: #FFFFFF; 
+    font-size: 14px;
+    border: 2px solid #C2410C;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.45);
+}
+.btn-curso:hover {
+    background: linear-gradient(135deg, #EA580C, #C2410C);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.65);
+}
+
+/* ================= AULA VIRTUAL (CONSISTENCIA CON MARCOS EN TODOS LOS PANELES) ================= */
+.curso-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+}
+
+.btn-volver {
+    background: #E2E8F0;
+    color: var(--texto-oscuro);
+    border: 2px solid #CBD5E1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.btn-volver:hover { background: var(--color-principal); color: #fff; border-color: var(--color-principal); }
+
+.user-status {
+    font-size: 10px;
+    background: #ECFDF5;
+    border: 2px solid #10B981;
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: #047857;
+    font-weight: bold;
+}
+
+.curso-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.niveles-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.tab-nivel {
+    background: #F8FAFC;
+    color: var(--texto-suave);
+    border: 2px solid #CBD5E1;
+    padding: 8px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.tab-nivel.active {
+    background: var(--color-principal);
+    color: #FFFFFF;
+    border-color: #1D4ED8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.aula-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 12px;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Marco hermoso para el menú lateral de lecciones */
+.lecciones-sidebar {
+    background: #F8FAFC;
+    border-radius: 10px;
+    overflow-y: auto;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 2px solid #93C5FD;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.btn-leccion {
+    background: #FFFFFF;
+    color: var(--texto-oscuro);
+    border: 1px solid #E2E8F0;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 11px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-leccion:hover, .btn-leccion.active {
+    background: var(--color-principal);
+    color: #FFFFFF;
+    font-weight: bold;
+    border-color: var(--color-principal);
+}
+
+/* Marco hermoso para el panel de contenido de la lección */
+.leccion-content {
+    background: #F8FAFC;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    border: 2px solid #93C5FD;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.leccion-content h3 {
+    font-size: 14px;
+    color: var(--color-principal);
+}
+
+.recursos-box {
+    background: #FFFFFF;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #E2E8F0;
+}
+
+.recursos-box h4 {
+    font-size: 11px;
+    margin-bottom: 6px;
+    color: var(--texto-oscuro);
+}
+
+.recursos-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.btn-recurso {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    color: #FFFFFF;
+    padding: 8px;
+    font-size: 11px;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 2px solid #C2410C;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(249, 115, 22, 0.35);
+    transition: 0.2s;
+}
+.btn-recurso:hover { opacity: 0.9; transform: scale(1.01); }
+
+.evaluacion-panel {
+    text-align: center;
+}
+
+.btn-eval {
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: #FFFFFF;
+    font-weight: bold;
+    border: 2px solid #047857;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    transition: 0.2s;
+}
+.btn-eval:hover { opacity: 0.95; transform: translateY(-2px); }
+
+
+/* ================= 6. FOOTER Y CONTACTO DESTACADO CON MARCO ================= */
+.app-footer {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    border-top: 2px solid #3B82F6;
+    background: linear-gradient(0deg, #EFF6FF 0%, #FFFFFF 100%);
+    border-radius: 0 0 12px 12px;
+}
+
+.sponsors {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 6px;
+}
+
+.sponsors img {
+    width: 45px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.contacto-info { 
+    font-size: 12px; 
+    color: #1D4ED8; 
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+}
+
+.aviso-wa { 
+    font-size: 10px; 
+    color: #C2410C; 
+    font-weight: 700;
+}
+
+
+/* ================= MODALES CON MARCOS LLAMATIVOS ================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    color: var(--texto-oscuro);
+    padding: 22px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 460px;
+    max-height: 82vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 3px solid #2563EB;
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25);
+}
+
+.modal-body-scroll {
+    overflow-y: auto;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding-right: 5px;
+}
+
+.modal-body-scroll h3 { color: var(--color-principal); margin-top: 12px; font-size: 13px; font-weight: 700; }
+.modal-body-scroll p, .modal-body-scroll li { color: #334155; margin-bottom: 6px; }
+
+.close {
+    color: #EF4444;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.close:hover { color: #DC2626; transform: scale(1.1); }

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Final - Nivel 4 | PWA InnovaPro IA</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #8b0000; text-align: center; }
+        .question { margin-bottom: 20px; padding: 15px; background: #fafafa; border-left: 4px solid #8b0000; border-radius: 4px; }
+        .question p { font-weight: bold; margin-bottom: 10px; }
+        label { display: block; margin-bottom: 5px; cursor: pointer; }
+        button { display: block; width: 100%; background: #8b0000; color: #fff; border: none; padding: 12px; font-size: 16px; border-radius: 4px; cursor: pointer; margin-top: 20px; font-weight: bold; }
+        button:hover { background: #600; }
+        #result-section, #diploma-section { display: none; text-align: center; margin-top: 30px; padding: 20px; background: #eef9ee; border: 1px solid #c3e6cb; border-radius: 4px; }
+        .input-group { margin: 15px 0; text-align: left; }
+        .input-group label { font-weight: bold; }
+        .input-group input { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Examen Final - Nivel 4</h1>
+    <h2>Evaluación Integral PWA InnovaPro IA</h2>
+    <p style="text-align: center;">Responde las 15 preguntas. Necesitas al menos un 70% de aciertos y tu link de portafolio para desbloquear tu diploma.</p>
+
+    <form id="quiz-form">
+        <!-- Pregunta 1 -->
+        <div class="question"><p>1. ¿Cuál es el objetivo principal de una landing page comercial en una PWA?</p>
+            <label><input type="radio" name="q1" value="a"> Almacenar contraseñas de usuarios.</label>
+            <label><input type="radio" name="q1" value="b"> Capturar la atención del usuario y dirigirlo hacia una acción específica de venta o contacto.</label>
+            <label><input type="radio" name="q1" value="c"> Mostrar únicamente imágenes sin texto.</label>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="question"><p>2. ¿Qué lógica de programación es fundamental para evaluar si dos cartas seleccionadas coinciden en un memorama?</p>
+            <label><input type="radio" name="q2" value="a"> Contar cuántos clics da el usuario en la pantalla.</label>
+            <label><input type="radio" name="q2" value="b"> Comparar los identificadores únicos (IDs o valores) de los elementos almacenados en un arreglo temporal.</label>
+            <label><input type="radio" name="q2" value="c"> Apagar la aplicación si hay un error.</label>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="question"><p>3. ¿Qué característica visual y estructural se maneja al mover elementos en un juego de tipo solitario?</p>
+            <label><input type="radio" name="q3" value="a"> Los eventos de arrastre (drag and drop) o clics de reubicación de nodos.</label>
+            <label><input type="radio" name="q3" value="b"> La impresión automática en papel bond.</label>
+            <label><input type="radio" name="q3" value="c"> El cambio de color del monitor.</label>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="question"><p>4. ¿Qué función nativa de JavaScript se debe evitar utilizar por seguridad al evaluar cadenas de texto como operaciones matemáticas?</p>
+            <label><input type="radio" name="q4" value="a"> La función print().</label>
+            <label><input type="radio" name="q4" value="b"> La función eval(), prefiriendo lógica aritmética estructurada o analizadores seguros.</label>
+            <label><input type="radio" name="q4" value="c"> La función alert().</label>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="question"><p>5. ¿Cómo se logra que los datos de prospectos en un mini CRM persistan aunque el usuario cierre el navegador?</p>
+            <label><input type="radio" name="q5" value="a"> Guardándolo en la memoria RAM temporal.</label>
+            <label><input type="radio" name="q5" value="b"> Utilizando el almacenamiento local del navegador (localStorage).</label>
+            <label><input type="radio" name="q5" value="c"> Mandando un fax a la oficina.</label>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="question"><p>6. ¿Qué objeto nativo de JavaScript facilita la obtención del mes, día y año actual para un calendario?</p>
+            <label><input type="radio" name="q6" value="a"> El objeto Date().</label>
+            <label><input type="radio" name="q6" value="b"> El objeto Math().</label>
+            <label><input type="radio" name="q6" value="c"> El objeto Array().</label>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="question"><p>7. ¿Cuál es la forma más limpia de calcular el porcentaje final de aciertos en un cuestionario?</p>
+            <label><input type="radio" name="q7" value="a"> Restar las malas de las buenas y dividir entre diez.</label>
+            <label><input type="radio" name="q7" value="b"> Dividir el total de respuestas correctas entre el número total de preguntas y multiplicarlo por 100.</label>
+            <label><input type="radio" name="q7" value="c"> Adivinar el promedio general.</label>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="question"><p>8. ¿Qué etiqueta estándar de HTML5 se manipula mediante JavaScript para controlar la reproducción de video o audio?</p>
+            <label><input type="radio" name="q8" value="a"> &lt;audio&gt; y &lt;video&gt;.</label>
+            <label><input type="radio" name="q8" value="b"> &lt;picture&gt; y &lt;img&gt;.</label>
+            <label><input type="radio" name="q8" value="c"> &lt;media&gt; y &lt;player&gt;.</label>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="question"><p>9. ¿Qué función cumplen las etiquetas Open Graph (og) en el código HTML de una tarjeta digital (Talent Card)?</p>
+            <label><input type="radio" name="q9" value="a"> Optimizar la vista previa de la tarjeta cuando se comparte en redes sociales o WhatsApp.</label>
+            <label><input type="radio" name="q9" value="b"> Acelerar la velocidad del internet del teléfono.</label>
+            <label><input type="radio" name="q9" value="c"> Cambiar el idioma del teclado automáticamente.</label>
+        </div>
+
+        <!-- Pregunta 10 -->
+        <div class="question"><p>10. ¿Qué método de JavaScript permite ejecutar una función de actualización de hora de manera repetitiva cada segundo?</p>
+            <label><input type="radio" name="q10" value="a"> setTimeout()</label>
+            <label><input type="radio" name="q10" value="b"> setInterval()</label>
+            <label><input type="radio" name="q10" value="c"> loopTime()</label>
+        </div>
+
+        <!-- Pregunta 11 -->
+        <div class="question"><p>11. ¿Qué técnica CSS moderna facilita que las tarjetas de un catálogo web se acomoden automáticamente en celulares y computadoras?</p>
+            <label><input type="radio" name="q11" value="a"> Escribir todo el texto en mayúsculas.</label>
+            <label><input type="radio" name="q11" value="b"> CSS Grid o Flexbox con diseño responsivo.</label>
+            <label><input type="radio" name="q11" value="c"> Usar imágenes fijas de gran tamaño.</label>
+        </div>
+
+        <!-- Pregunta 12 (Multimedia: Estación de Radio) -->
+        <div class="question"><p>12. ¿Qué herramientas combinamos para estructurar y reproducir contenido en la Estación de Radio Web / Podcast?</p>
+            <label><input type="radio" name="q12" value="a"> Grabaciones de Vocaroo y locuciones con Google Traductor (TTS) montadas en un reproductor web.</label>
+            <label><input type="radio" name="q12" value="b"> Hojas de cálculo impresas.</label>
+            <label><input type="radio" name="q12" value="c"> Cables USB conectados a la corriente alterna.</label>
+        </div>
+
+        <!-- Pregunta 13 (Multimedia: Video de Idiomas) -->
+        <div class="question"><p>13. ¿Cuál es el propósito del video de idiomas con canciones y subtítulos dentro de los proyectos multimedia?</p>
+            <label><input type="radio" name="q13" value="a"> Ocupar espacio en disco duro.</label>
+            <label><input type="radio" name="q13" value="b"> Fomentar el aprendizaje bilingüe mediante piezas audiovisuales emotivas y subtituladas.</label>
+            <label><input type="radio" name="q13" value="c"> Imprimir folletos en papel.</label>
+        </div>
+
+        <!-- Pregunta 14 (Presentación en Gamma) -->
+        <div class="question"><p>14. ¿Qué ventaja ofrece utilizar Gamma.app para la presentación ejecutiva del portafolio?</p>
+            <label><input type="radio" name="q14" value="a"> Permite maquetar presentaciones profesionales e interactivas de alto impacto visual con apoyo de IA.</label>
+            <label><input type="radio" name="q14" value="b"> Sirve exclusivamente para programar código en JavaScript.</label>
+            <label><input type="radio" name="q14" value="c"> Compila archivos ejecutables para Windows.</label>
+        </div>
+
+        <!-- Pregunta 15 -->
+        <div class="question"><p>15. ¿Qué archivo de configuración es indispensable para que una aplicación web pueda instalarse en el dispositivo como una PWA y desplegarse en servidores gratuitos (Netlify, Surge, Cloudflare)?</p>
+            <label><input type="radio" name="q15" value="a"> Un documento de texto sin formato.</label>
+            <label><input type="radio" name="q15" value="b"> El archivo manifest.json y el registro de un Service Worker.</label>
+            <label><input type="radio" name="q15" value="c"> Una imagen en formato JPG.</label>
+        </div>
+
+        <button type="button" onclick="evaluarExamen()">Enviar Examen</button>
+    </form>
+
+    <!-- Sección de Resultados y Diploma -->
+    <div id="result-section">
+        <h3 id="result-title"></h3>
+        <p id="result-msg"></p>
+        
+        <div id="portfolio-container" style="display:none;">
+            <div class="input-group">
+                <label for="student-name">Nombre Completo del Alumno:</label>
+                <input type="text" id="student-name" placeholder="Ej. J Natividad Perez Moreno">
+            </div>
+            <div class="input-group">
+                <label for="portfolio-link">Enlace de tu Portafolio Web (PWA):</label>
+                <input type="url" id="portfolio-link" placeholder="https://tu-usuario.github.io/tu-portafolio">
+            </div>
+            <button type="button" onclick="generarDiplomaJPG()">Generar y Descargar mi Diploma</button>
+        </div>
+    </div>
+</div>
+
+<canvas id="canvas-diploma" style="display:none;"></canvas>
+
+<script>
+    const respuestasCorrectas = {
+        q1: 'b', q2: 'b', q3: 'a', q4: 'b', q5: 'b',
+        q6: 'a', q7: 'b', q8: 'a', q9: 'a', q10: 'b',
+        q11: 'b', q12: 'a', q13: 'b', q14: 'a', q15: 'b'
+    };
+
+    function evaluarExamen() {
+        let aciertos = 0;
+        let total = 15;
+        let respondidas = 0;
+
+        for (let key in respuestasCorrectas) {
+            let seleccionada = document.querySelector(`input[name="${key}"]:checked`);
+            if (seleccionada) {
+                respondidas++;
+                if (seleccionada.value === respuestasCorrectas[key]) {
+                    aciertos++;
+                }
+            }
+        }
+
+        if (respondidas < total) {
+            alert("Por favor responde todas las preguntas antes de enviar.");
+            return;
+        }
+
+        let porcentaje = (aciertos / total) * 100;
+        
+        document.getElementById('quiz-form').style.display = 'none';
+        let resSection = document.getElementById('result-section');
+        resSection.style.display = 'block';
+
+        let title = document.getElementById('result-title');
+        let msg = document.getElementById('result-msg');
+        let portContainer = document.getElementById('portfolio-container');
+
+        if (porcentaje >= 70) {
+            title.style.color = "green";
+            title.innerText = "¡Aprobado con Éxito!";
+            msg.innerText = `Obtuviste ${porcentaje.toFixed(0)}% de aciertos (${aciertos}/${total}). Ingresa tus datos para generar tu diploma.`;
+            portContainer.style.display = 'block';
+        } else {
+            title.style.color = "red";
+            title.innerText = "No alcanzaste el puntaje mínimo";
+            msg.innerText = `Obtuviste ${porcentaje.toFixed(0)}% (${aciertos}/${total}). Necesitas al menos 70%.`;
+        }
+    }
+
+    function generarDiplomaJPG() {
+        const nombreAlumno = document.getElementById('student-name').value.trim();
+        const linkPortafolio = document.getElementById('portfolio-link').value.trim();
+
+        if (!nombreAlumno || !linkPortafolio) {
+            alert("Por favor escribe tu nombre completo y el enlace de tu portafolio.");
+            return;
+        }
+
+        const canvas = document.getElementById('canvas-diploma');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+
+        img.src = 'diploma_base.jpg';
+
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            ctx.drawImage(img, 0, 0);
+
+            ctx.font = "bold 55px Arial, sans-serif";
+            ctx.fillStyle = "#222222";
+            ctx.textAlign = "center";
+
+            const xCoord = canvas.width / 2;
+            const yCoord = canvas.height * 0.47; 
+
+            ctx.fillText(nombreAlumno, xCoord, yCoord);
+
+            const link = document.createElement('a');
+            link.download = `Diploma_${nombreAlumno.replace(/\s+/g, '_')}.jpg`;
+            link.href = canvas.toDataURL('image/jpeg', 0.95);
+            link.click();
+
+            alert("¡Diploma generado y descargado con éxito en formato JPG!");
+        };
+
+        img.onerror = function() {
+            alert("No se pudo cargar 'diploma_base.jpg'. Asegúrate de que el archivo esté en la misma carpeta.");
+        };
+    }
+</script>
+
+</body>
+</html>

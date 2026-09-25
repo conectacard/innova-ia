@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovaPro IA - Preparando a los jóvenes para los empleos que pronto existirán</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- ================= VISTA 1: HOME / ACCESO INSTITUCIONAL ================= -->
+    <div id="view-home" class="app-container">
+        <header class="app-header">
+            <img src="imagenes/logo_principal.png" alt="InnovaPro IA" class="logo-img">
+            <span class="eslogan">"Preparando a los jóvenes para los empleos que pronto existirán."</span>
+        </header>
+
+        <main class="home-main">
+            <!-- Video de Presentación Principal -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/LcqjlzUucIU" title="InnovaPro IA Presentación" allowfullscreen></iframe>
+            </div>
+
+            <!-- Justificación WEF resumida -->
+            <p class="wef-text">Capacitación tecnológica de vanguardia alineada a las demandas globales del futuro laboral.</p>
+
+            <!-- Botones de Interacción Estratégica (Cuadrícula 2x2 Homogénea) -->
+            <div class="dashboard-grid">
+                <button class="btn-app" onclick="abrirModal('modal-programa')">📚 Plan Semestral</button>
+                <button class="btn-app" onclick="abrirModal('modal-certificados')">🎓 Diplomas y Certificaciones</button>
+                <a href="https://ia-escuelas.pideya.contact/" target="_blank" class="btn-app btn-demo">🚀 Demos del Proyecto</a>
+                <button class="btn-app btn-faq" onclick="abrirModal('modal-faq')">❓ Preguntas Frecuentes (FAQ)</button>
+                <button class="btn-app btn-curso" onclick="mostrarVistaCurso()" style="grid-column: span 2;">💻 Ingresar al Curso (60 Lecciones)</button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="sponsors">
+                <img src="imagenes/sponsor_1.png" alt="Aliado 1">
+                <img src="imagenes/sponsor_2.png" alt="Aliado 2">
+                <img src="imagenes/sponsor_3.png" alt="Aliado 3">
+            </div>
+            <p class="contacto-info">📍 Fracc. Capittala, Ags. | 📱 WA1: 449 147 23336 | 📱 WA2: 56 1453 7590</p>
+            <p class="aviso-wa">*(Solo mensajes, por favor)*</p>
+        </footer>
+    </div>
+
+
+    <!-- ================= VISTA 2: PLATAFORMA DE ESTUDIO (60 LECCIONES) ================= -->
+    <div id="view-curso" class="app-container" style="display: none;">
+        <header class="curso-header">
+            <button class="btn-volver" onclick="mostrarVistaHome()">⬅ Volver al Inicio</button>
+            <h2>Aula Virtual - InnovaPro IA</h2>
+            <div id="user-status" class="user-status">Licencia Vigente (6 Meses)</div>
+        </header>
+
+        <main class="curso-main">
+            <!-- Selector de Niveles -->
+            <div class="niveles-tabs">
+                <button class="tab-nivel active" onclick="cambiarNivel(1)">Nivel 1 (IA & Prompt)</button>
+                <button class="tab-nivel" onclick="cambiarNivel(2)">Nivel 2 (Visual & 3D)</button>
+                <button class="tab-nivel" onclick="cambiarNivel(3)">Nivel 3 (VS Code & Web)</button>
+                <button class="tab-nivel" onclick="cambiarNivel(4)">Nivel 4 (15 Proyectos)</button>
+            </div>
+
+            <!-- Listado y Reproductor de Lecciones -->
+            <div class="aula-grid">
+                <!-- Selector de Lecciones (1 a 15) -->
+                <div class="lecciones-sidebar" id="lista-lecciones">
+                    <!-- Generado dinámicamente por JS -->
+                </div>
+
+                <!-- Contenido de la Lección Activa -->
+                <div class="leccion-content">
+                    <h3 id="titulo-leccion-activa">Selecciona una lección</h3>
+                    <div class="video-container">
+                        <iframe id="video-leccion" src="https://www.youtube.com/embed/LcqjlzUucIU" title="Video Lección" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Panel de Recursos Didácticos Descargables (Optimizado a un solo botón) -->
+                    <div class="recursos-box">
+                        <h4>📁 Material de Estudio de la Lección</h4>
+                        <div class="recursos-buttons">
+                            <a href="#" id="btn-pdf" class="btn-recurso pdf" download style="width: 100%; text-align: center; justify-content: center;">📥 Descargar Guía de Estudio en PDF</a>
+                        </div>
+                    </div>
+
+                    <div class="evaluacion-panel" style="display: none;">
+                        <a href="#" class="btn-eval" style="display: inline-block; text-align: center; text-decoration: none;">📝 Presentar Examen de Nivel</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <div id="modal-programa" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal('modal-programa')">&times;</span>
+        <h2>Programa Académico Semestral</h2>
+        <div class="modal-body-scroll">
+            <h3>Nivel 1: IA Generativa, Despliegue Web y Multimedia Básica (4 Semanas)</h3>
+            <p>LLMs, Prompt Engineering, ChatGPT, Gemini, Perplexity, DeepSeek, Copilot, Vocaroo, Google TTS, Suno, Netlify, Surge y Cloudflare Pages.</p>
+            <h3>Nivel 2: Creatividad Visual, Presentaciones y Multimedia Sintética (4 Semanas)</h3>
+            <p>DALL-E 3, Leonardo AI, Gamma.app, Clipchamp, Descript, Meshy AI, Spline, Pika, Veo y videos de idiomas educativos.</p>
+            <h3>Nivel 3: Desarrollo Web con VS Code (5 Semanas)</h3>
+            <p>Instalación de VS Code, HTML5, CSS3, JavaScript, asistentes de IA (Copilot/DeepSeek) y PWAs locales.</p>
+            <h3>Nivel 4: 15 Proyectos Reales / Talleres (6 Semanas)</h3>
+            <p>Landing pages, memoramas, calculadoras, CRM escolar, calendarios, quizzes, reproductores, tarjetas digitales, estación de radio web, video de idiomas, presentación en Gamma.app y PWA final desplegada.</p>
+        </div>
+    </div>
+</div>
+
+    <div id="modal-certificados" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal('modal-certificados')">&times;</span>
+            <h2>Diplomas e Insignias Oficiales</h2>
+            <div class="modal-body-scroll">
+                <h3>Diplomas Internos Nominativos (Emisión Institucional PDF)</h3>
+                <ul>
+                    <li>Nivel 1: Fundamentos de IA Generativa.</li>
+                    <li>Nivel 2: Creación Visual y Gráficos 3D.</li>
+                    <li>Nivel 3: Desarrollo Web Base en VS Code.</li>
+                    <li>Nivel Máster (Nivel 4): Creador de Aplicaciones Web con IA.</li>
+                </ul>
+                <h3>Certificaciones Internacionales Globales</h3>
+                <ul>
+                    <li><strong>Cisco Networking Academy:</strong> Introduction to Data Science / AI Basics.</li>
+                    <li><strong>Google Cloud Skills Boost:</strong> Generative AI Fundamentals.</li>
+                    <li><strong>Microsoft & LinkedIn Learning:</strong> Career Essentials in Generative AI.</li>
+                    <li><strong>Universidad de Helsinki:</strong> Elements of AI.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: FAQ (PREGUNTAS FRECUENTES) -->
+    <div id="modal-faq" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal('modal-faq')">&times;</span>
+            <h2>Preguntas Frecuentes (FAQ)</h2>
+            <div class="modal-body-scroll">
+                <h3>1. ¿Cómo se les da clase a los alumnos, si ninguno de nuestros maestros sabe Inteligencia Artificial?</h3>
+                <p><strong>R:</strong> Existen 2 formas: <br>a) Se les puede dar un curso a los maestros con un costo simbólico y además tendrán acceso a la plataforma todo el semestre, independientemente de que tomen este curso o no.<br>b) El curso está diseñado para ser autodidacta y los lleva paso a paso desde cero hasta terminarlo.</p>
+                
+                <h3>2. ¿Se requiere experiencia previa en código?</h3>
+                <p><strong>R:</strong> Ninguna. El Nivel 1 parte desde cero absoluto, guiando al alumno de usuario básico a creador de tecnología.</p>
+                
+                <h3>3. ¿Cómo funciona el acceso a la plataforma?</h3>
+                <p><strong>R:</strong> Cada alumno recibe un usuario y contraseña temporal inicial con vigencia estricta de 6 meses para proteger las licencias escolares.</p>
+                
+                <h3>4. ¿El alumno recibe algún reconocimiento o certificación?</h3>
+                <p><strong>R:</strong> Sí. Al aprobar las evaluaciones de cada etapa (con más del 70% de aciertos), el sistema emite diplomas institucionales nominativos en PDF. Además, durante el trayecto, los alumnos obtienen rutas para tramitar insignias y certificaciones internacionales oficiales de Cisco, Google Cloud, Microsoft y la Universidad de Helsinki.</p>
+                
+                <h3>5. ¿Qué pasa si el alumno pierde la contraseña?</h3>
+                <p><strong>R:</strong> El sistema permite que el alumno cambie su contraseña al ingresar por primera vez. En caso de extravío posterior, el colegio o el administrador puede solicitar el restablecimiento inmediato mediante los canales de soporte.</p>
+                
+                <h3>6. ¿Cómo sé que mi hijo aprendió?</h3>
+                <p><strong>R:</strong> Al finalizar el curso, su hijo habrá generado diferentes proyectos como videos, canciones, imágenes, pero sobre todo aplicaciones tanto de entretenimiento como laborales. Puede ver el botón: "Demos del proyecto".</p>
+                
+                <h3>7. ¿Cuándo puede entrar mi hijo a la plataforma?</h3>
+                <p><strong>R:</strong> La plataforma es una herramienta de 24x7 durante todo el semestre.</p>
+                
+                <h3>8. ¿Qué pasa si mi hijo termina antes el curso o no lo termina a tiempo?</h3>
+                <p><strong>R:</strong> Si el alumno termina antes, puede explorar, repasar y perfeccionar sus proyectos sin restricciones. Si por alguna razón no concluye a tiempo, se puede comunicar con su director para pedir una extensión del curso por el tiempo que ustedes lo consideren pertinente con el respectivo pago por mes.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "name": "InnovaPro IA",
+    "short_name": "InnovaPro",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#0B0F19",
+    "theme_color": "#0F172A",
+    "description": "Plataforma educativa de IA y desarrollo web para preparatorias con 60 lecciones.",
+    "icons": [
+        {
+            "src": "imagenes/logo_principal.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

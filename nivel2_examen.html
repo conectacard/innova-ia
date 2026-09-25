@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Final - Nivel 2 | PWA InnovaPro IA</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 5px solid #2563EB; }
+        h1, h2 { color: #2563EB; text-align: center; }
+        .question { margin-bottom: 20px; padding: 15px; background: #fafafa; border-left: 4px solid #2563EB; border-radius: 4px; }
+        .question p { font-weight: bold; margin-bottom: 10px; }
+        label { display: block; margin-bottom: 5px; cursor: pointer; }
+        button { display: block; width: 100%; background: #2563EB; color: #fff; border: none; padding: 12px; font-size: 16px; border-radius: 4px; cursor: pointer; margin-top: 20px; font-weight: bold; }
+        button:hover { background: #1D4ED8; }
+        #result-section, #diploma-section { display: none; text-align: center; margin-top: 30px; padding: 20px; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 4px; }
+        .input-group { margin: 15px 0; text-align: left; }
+        .input-group label { font-weight: bold; }
+        .input-group input { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Examen Final - Nivel 2</h1>
+    <h2>Creatividad Visual, Presentaciones (Gamma) y Multimedia Sintética</h2>
+    <p style="text-align: center;">Responde las 10 preguntas. Necesitas al menos un 70% de aciertos para desbloquear tu diploma institucional.</p>
+
+    <form id="quiz-form">
+        <!-- Pregunta 1 -->
+        <div class="question"><p>1. ¿Qué herramientas de inteligencia artificial se especializan en la generación de imágenes profesionales y control artístico avanzado a partir de texto?</p>
+            <label><input type="radio" name="q1" value="a"> A) DALL-E 3 y Leonardo AI.</label>
+            <label><input type="radio" name="q1" value="b"> B) Hojas de cálculo y editores de texto plano.</label>
+            <label><input type="radio" name="q1" value="c"> C) Reproductores de audio locales.</label>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="question"><p>2. ¿Cuál es el propósito principal de utilizar una plataforma como <b>Gamma.app</b> en este nivel?</p>
+            <label><input type="radio" name="q2" value="a"> A) Maquetar portafolios, pitches y presentaciones profesionales de proyectos sin complicaciones de diseño.</label>
+            <label><input type="radio" name="q2" value="b"> B) Instalar controladores de video en el sistema operativo.</label>
+            <label><input type="radio" name="q2" value="c"> C) Analizar bases de datos relacionales masivas.</label>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="question"><p>3. ¿Qué tipo de interfaces o modelos tridimensionales se pueden explorar y generar con herramientas como <b>Meshy AI</b>, <b>Spline AI</b> o <b>Luma AI (Genie)</b>?</p>
+            <label><input type="radio" name="q3" value="a"> A) Gráficos e interfaces tridimensionales (3D).</label>
+            <label><input type="radio" name="q3" value="b"> B) Documentos impresos en papel bond.</label>
+            <label><input type="radio" name="q3" value="c"> C) Hojas de cálculo financieras.</label>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="question"><p>4. ¿Qué permiten realizar las plataformas de producción de video sintético y cinemático como <b>Pika, Hailuo, Veo o Seedance</b>?</p>
+            <label><input type="radio" name="q4" value="a"> A) Animar y generar secuencias visuales y videos mediante descripciones de texto o imágenes.</label>
+            <label><input type="radio" name="q4" value="b"> B) Imprimir documentos en formato físico a color.</label>
+            <label><input type="radio" name="q4" value="c"> C) Enviar correos electrónicos masivos.</label>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="question"><p>5. ¿Cuál es el propósito de utilizar programas como <b>Clipchamp</b> y <b>Descript</b> en el módulo de edición multimedia?</p>
+            <label><input type="radio" name="q5" value="a"> A) Editar video educativo, crear piezas de contenido bilingüe o musical con subtítulos dinámicos y corregir locuciones mediante texto.</label>
+            <label><input type="radio" name="q5" value="b"> B) Reparar errores físicos de hardware en la computadora.</label>
+            <label><input type="radio" name="q5" value="c"> C) Diseñar logotipos vectoriales en 2D exclusivamente.</label>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="question"><p>6. ¿Qué ventaja ofrece <b>Leonardo AI</b> al generar imágenes en comparación con otras plataformas básicas?</p>
+            <label><input type="radio" name="q6" value="a"> A) Ofrece mayor control artístico, estilos predefinidos y acabados de alta calidad visual.</label>
+            <label><input type="radio" name="q6" value="b"> B) Solo permite hacer dibujos a lápiz blanco y negro.</label>
+            <label><input type="radio" name="q6" value="c"> C) Requiere conectar un escáner de oficina.</label>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="question"><p>7. En el contexto de la edición de video con <b>Descript</b>, ¿qué función clave facilita la edición de locuciones?</p>
+            <label><input type="radio" name="q7" value="a"> A) La transcripción del audio a texto para editar el video simplemente modificando las palabras escritas.</label>
+            <label><input type="radio" name="q7" value="b"> B) Apagar la cámara web automáticamente.</label>
+            <label><input type="radio" name="q7" value="c"> C) Traducir el video a código binario.</label>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="question"><p>8. ¿Para qué se utilizan los modelos 3D generados con Inteligencia Artificial dentro de proyectos web modernos?</p>
+            <label><input type="radio" name="q8" value="a"> A) Para enriquecer visualmente las interfaces y darles interactividad tridimensional a los usuarios.</label>
+            <label><input type="radio" name="q8" value="b"> B) Para reemplazar los archivos de texto del sistema operativo.</label>
+            <label><input type="radio" name="q8" value="c"> C) Para medir la temperatura del procesador.</label>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="question"><p>9. ¿Cuál es el objetivo principal del módulo de <b>Optimización Web</b> en este nivel?</p>
+            <label><input type="radio" name="q9" value="a"> A) Aplicar estrategias para comprimir y combinar recursos multimedia pesados antes de subirlos a la web.</label>
+            <label><input type="radio" name="q9" value="b"> B) Incrementar el consumo de datos móviles del usuario.</label>
+            <label><input type="radio" name="q9" value="c"> C) Eliminar por completo las imágenes de los sitios web.</label>
+        </div>
+
+        <!-- Pregunta 10 -->
+        <div class="question"><p>10. Al cierre de este nivel, además de la evaluación final, ¿qué entrega práctica debe realizar el alumno?</p>
+            <label><input type="radio" name="q10" value="a"> A) La entrega del portafolio visual y de video.</label>
+            <label><input type="radio" name="q10" value="b"> B) Un reporte impreso de contabilidad corporativa.</label>
+            <label><input type="radio" name="q10" value="c"> C) Un examen físico de mecanografía.</label>
+        </div>
+
+        <button type="button" onclick="evaluarExamen()">Enviar Examen</button>
+    </form>
+
+    <!-- Sección de Resultados y Diploma -->
+    <div id="result-section">
+        <h3 id="result-title"></h3>
+        <p id="result-msg"></p>
+        
+        <div id="portfolio-container" style="display:none;">
+            <div class="input-group">
+                <label for="student-name">Nombre Completo del Alumno:</label>
+                <input type="text" id="student-name" placeholder="Ej. Juan Pérez López">
+            </div>
+            <button type="button" onclick="generarDiplomaJPG()">Generar y Descargar mi Diploma</button>
+        </div>
+    </div>
+</div>
+
+<canvas id="canvas-diploma" style="display:none;"></canvas>
+
+<script>
+    const respuestasCorrectas = {
+        q1: 'a', q2: 'a', q3: 'a', q4: 'a', q5: 'a',
+        q6: 'a', q7: 'a', q8: 'a', q9: 'a', q10: 'a'
+    };
+
+    function evaluarExamen() {
+        let aciertos = 0;
+        let total = 10;
+        let respondidas = 0;
+
+        for (let key in respuestasCorrectas) {
+            let seleccionada = document.querySelector(`input[name="${key}"]:checked`);
+            if (seleccionada) {
+                respondidas++;
+                if (seleccionada.value === respuestasCorrectas[key]) {
+                    aciertos++;
+                }
+            }
+        }
+
+        if (respondidas < total) {
+            alert("Por favor responde todas las preguntas antes de enviar.");
+            return;
+        }
+
+        let porcentaje = (aciertos / total) * 100;
+        
+        document.getElementById('quiz-form').style.display = 'none';
+        let resSection = document.getElementById('result-section');
+        resSection.style.display = 'block';
+
+        let title = document.getElementById('result-title');
+        let msg = document.getElementById('result-msg');
+        let portContainer = document.getElementById('portfolio-container');
+
+        if (porcentaje >= 70) {
+            title.style.color = "#10B981";
+            title.innerText = "¡Excelente Trabajo, Nivel 2 Aprobado!";
+            msg.innerText = `Obtuviste ${porcentaje.toFixed(0)}% de aciertos (${aciertos}/${total}). ¡Felicidades por dominar la creatividad visual, presentaciones y multimedia sintética! Ingresa tu nombre para obtener tu diploma.`;
+            portContainer.style.display = 'block';
+        } else {
+            title.style.color = "#EF4444";
+            title.innerText = "Sigue practicando";
+            msg.innerText = `Obtuviste ${porcentaje.toFixed(0)}% (${aciertos}/${total}). Necesitas al menos un 70% (7 aciertos) para aprobar. ¡Repasa la guía y vuelve a intentarlo!`;
+        }
+    }
+
+    function generarDiplomaJPG() {
+        const nombreAlumno = document.getElementById('student-name').value.trim();
+
+        if (!nombreAlumno) {
+            alert("Por favor escribe tu nombre completo.");
+            return;
+        }
+
+        const canvas = document.getElementById('canvas-diploma');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+
+        img.src = 'diploma_base.jpg';
+
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            ctx.drawImage(img, 0, 0);
+
+            ctx.font = "bold 55px Arial, sans-serif";
+            ctx.fillStyle = "#222222";
+            ctx.textAlign = "center";
+
+            const xCoord = canvas.width / 2;
+            const yCoord = canvas.height * 0.47; 
+
+            ctx.fillText(nombreAlumno, xCoord, yCoord);
+
+            const link = document.createElement('a');
+            link.download = `Diploma_Nivel2_${nombreAlumno.replace(/\s+/g, '_')}.jpg`;
+            link.href = canvas.toDataURL('image/jpeg', 0.95);
+            link.click();
+
+            alert("¡Diploma del Nivel 2 generado y descargado con éxito!");
+        };
+
+        img.onerror = function() {
+            alert("No se pudo cargar 'diploma_base.jpg'. Asegúrate de que el archivo esté en la misma carpeta.");
+        };
+    }
+</script>
+
+</body>
+</html>
