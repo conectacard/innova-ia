@@ -139,9 +139,8 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
         numeroGuia = leccionNum + 45;
     }
     
-    // Cálculo de la ruta y subcarpeta dinámica según el nivel del 1 al 4
-    let nombreCarpetaNivel = `Nivel${nivel}`;
-    let rutaPdf = `recursos/${nombreCarpetaNivel}/lecc_${numeroGuia}_guia.pdf`;
+    // Conexión dinámica a los subdominios independientes de cada nivel
+    let rutaPdf = `https://nivel${nivel}.pideya.contact/lecc_${numeroGuia}_guia.pdf`;
     
     const btnPdf = document.getElementById('btn-pdf');
     btnPdf.href = rutaPdf;
