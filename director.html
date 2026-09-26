@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Dirección Escolar</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { color: #1a73e8; text-align: center; margin-bottom: 5px; }
+        p.subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 25px; }
+        .login-box, .dashboard-box { display: none; }
+        .active { display: block; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #333; }
+        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
+        button { background: #1a73e8; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #1557b0; }
+        .btn-excel { background: #28a745; width: auto; padding: 10px 20px; float: right; margin-bottom: 20px; }
+        .btn-excel:hover { background: #218838; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; font-size: 14px; }
+        th { background-color: #f8f9fa; color: #333; }
+        .msg { color: red; text-align: center; margin-top: 10px; font-size: 14px; }
+        .clearfix::after { content: ""; clear: both; display: table; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- VISTA 1: LOGIN DEL DIRECTOR -->
+        <div id="login-box" class="login-box active">
+            <h2>Panel de Dirección</h2>
+            <p class="subtitle">Ingresa el código de acceso de tu escuela para ver el padrón de alumnos.</p>
+            <form onsubmit="verificarAccesoDireccion(event)">
+                <div class="form-group">
+                    <label>Código de la Escuela:</label>
+                    <input type="text" id="codigo-escuela" required placeholder="Ej. colegio_hidalgo">
+                </div>
+                <button type="submit">Entrar al Panel</button>
+                <div id="error-msg" class="msg"></div>
+            </form>
+        </div>
+
+        <!-- VISTA 2: TABLA DE ALUMNOS INSCRITOS -->
+        <div id="dashboard-box" class="dashboard-box">
+            <h2 id="titulo-escuela">Padrón de Alumnos</h2>
+            <p class="subtitle">Aquí puedes consultar las contraseñas de tus alumnos o descargar el respaldo.</p>
+            
+            <div class="clearfix">
+                <button class="btn-excel" onclick="exportarExcel()">📥 Descargar Lista en Excel (CSV)</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre del Alumno</th>
+                        <th>Grado y Grupo</th>
+                        <th>Contraseña Personal</th>
+                        <th>Fecha de Registro</th>
+                    </tr>
+                ></thead>
+                <tbody id="tabla-alumnos">
+                    <!-- Los datos se cargan solos aquí -->
+                </tbody>
+            </table>
+            
+            <button style="background: #6c757d; width: auto; margin-top: 20px;" onclick="cerrarSesion()">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = "https://fjtzyxnpgxxsducxxobx.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqdHp5eG5wZ3h4c2R1Y3h4b2J4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyNDgwNjksImV4cCI6MjEwNTgyNDA2OX0.LlTw1ATsXpQTwzF72YjAe9ubgFWDZJSfBhRSCfj0aJw";
+
+        let codigoActual = "";
+        let listaAlumnosGlobal = [];
+
+        async function verificarAccesoDireccion(event) {
+            event.preventDefault();
+            const codigo = document.getElementById('codigo-escuela').value.trim();
+            const errorMsg = document.getElementById('error-msg');
+
+            try {
+                // Validar que la escuela exista en la base de datos principal
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/escuelas_demo?codigo=eq.${codigo}&select=*`, {
+                    headers: {
+                        "apikey": SUPABASE_ANON_KEY,
+                        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+                    }
+                });
+
+                const data = await response.json();
+
+                if (!data || data.length === 0) {
+                    errorMsg.innerText = "El código de la escuela no es válido.";
+                    return;
+                }
+
+                codigoActual = codigo;
+                document.getElementById('titulo-escuela').innerText = `Padrón de Alumnos: ${data[0].nombre_escuela}`;
+                
+                // Cambiar de vista al panel
+                document.getElementById('login-box').classList.remove('active');
+                document.getElementById('dashboard-box').classList.add('active');
+
+                // Cargar los alumnos de esta escuela
+                cargarAlumnos(codigo);
+
+            } catch (err) {
+                console.error(err);
+                errorMsg.innerText = "Error de conexión con el servidor.";
+            }
+        }
+
+        async function cargarAlumnos(codigo) {
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/alumnos_registrados?escuela_codigo=eq.${codigo}&select=*`, {
+                    headers: {
+                        "apikey": SUPABASE_ANON_KEY,
+                        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+                    }
+                });
+
+                const alumnos = await response.json();
+                listaAlumnosGlobal = alumnos;
+                const tbody = document.getElementById('tabla-alumnos');
+                tbody.innerHTML = '';
+
+                if (alumnos.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;">Aún no hay alumnos registrados con este código.</td></tr>`;
+                    return;
+                }
+
+                alumnos.forEach(alumno => {
+                    const fecha = new Date(alumno.fecha_registro).toLocaleDateString();
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${alumno.nombre_alumno}</td>
+                        <td>${alumno.grupo}</td>
+                        <td><strong>${alumno.password}</strong></td>
+                        <td>${fecha}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        function exportarExcel() {
+            if (listaAlumnosGlobal.length === 0) {
+                alert("No hay datos para exportar.");
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,Nombre del Alumno,Grupo,Contrasena,Fecha de Registro\n";
+
+            listaAlumnosGlobal.forEach(row => {
+                csvContent += `"${row.nombre_alumno}","${row.grupo}","${row.password}","${row.fecha_registro}"\n`;
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `padron_alumnos_${codigoActual}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function cerrarSesion() {
+            document.getElementById('dashboard-box').classList.remove('active');
+            document.getElementById('login-box').classList.add('active');
+            document.getElementById('codigo-escuela').value = '';
+        }
+    </script>
+</body>
+</html>

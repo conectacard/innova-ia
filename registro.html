@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Alumnos - Plataforma Educativa</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2 { color: #1a73e8; text-align: center; margin-bottom: 10px; }
+        p.subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 25px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #333; }
+        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
+        button { background: #1a73e8; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #1557b0; }
+        .msg { text-align: center; margin-top: 15px; font-size: 14px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Registro de Alumno</h2>
+        <p class="subtitle" id="info-escuela">Cargando datos del colegio...</p>
+        
+        <form id="form-registro" onsubmit="registrarAlumno(event)">
+            <div class="form-group">
+                <label>Nombre Completo:</label>
+                <input type="text" id="nombre" required placeholder="Ej. Juan Pérez López">
+            </div>
+            
+            <div class="form-group">
+                <label>Grado y Grupo:</label>
+                <input type="text" id="grupo" required placeholder="Ej. 3° B">
+            </div>
+            
+            <div class="form-group">
+                <label>Crea tu Contraseña Personal:</label>
+                <input type="password" id="password" required placeholder="••••••••">
+            </div>
+            
+            <button type="submit">Registrarme en el Curso</button>
+        </form>
+        <div id="mensaje-estado" class="msg"></div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = "https://fjtzyxnpgxxsducxxobx.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqdHp5eG5wZ3h4c2R1Y3h4b2J4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyNDgwNjksImV4cCI6MjEwNTgyNDA2OX0.LlTw1ATsXpQTwzF72YjAe9ubgFWDZJSfBhRSCfj0aJw";
+
+        // Obtener el código de la escuela desde el enlace (ej: registro.html?escuela=colegiopaulo)
+        const urlParams = new URLSearchParams(window.location.search);
+        const codigoEscuela = urlParams.get('escuela');
+
+        if (!codigoEscuela) {
+            document.getElementById('info-escuela').innerText = "❌ Enlace inválido o incompleto.";
+            document.getElementById('form-registro').style.display = 'none';
+        } else {
+            document.getElementById('info-escuela').innerText = `Colegio / Acceso: ${codigoEscuela}`;
+        }
+
+        async function registrarAlumno(event) {
+            event.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value.trim();
+            const grupo = document.getElementById('grupo').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const btn = event.target.querySelector('button');
+            const msg = document.getElementById('mensaje-estado');
+
+            btn.disabled = true;
+            btn.innerText = "Registrando...";
+
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/alumnos_registrados`, {
+                    method: 'POST',
+                    headers: {
+                        "apikey": SUPABASE_ANON_KEY,
+                        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+                        "Content-Type": "application/json",
+                        "Prefer": "return=minimal"
+                    },
+                    body: JSON.stringify({
+                        escuela_codigo: codigoEscuela,
+                        nombre_alumno: nombre,
+                        grupo: grupo,
+                        password: password
+                    })
+                });
+
+                if (response.ok) {
+                    msg.style.color = "green";
+                    msg.innerHTML = "¡Registro exitoso! Ya puedes cerrar esta ventana o ingresar a tus clases.";
+                    document.getElementById('form-registro').reset();
+                } else {
+                    throw new Error("No se pudo guardar el registro.");
+                }
+            } catch (error) {
+                console.error(error);
+                msg.style.color = "red";
+                msg.innerHTML = "Hubo un error al registrarte. Inténtalo de nuevo.";
+                btn.disabled = false;
+                btn.innerText = "Registrarme en el Curso";
+            }
+        }
+    </script>
+</body>
+</html>
