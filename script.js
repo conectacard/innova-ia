@@ -64,10 +64,21 @@ function cambiarNivel(numNivel) {
 function cargarNombresLeccion(nivel) {
     if(nivel === 1) {
         return [
-            "Introducción y Visión WEF", "Fundamentos de LLMs", "Prompt Engineering Base", "ChatGPT Práctico",
-            "Google Gemini Avanzado", "Perplexity & Búsqueda", "GitHub Copilot", "DeepSeek Asistente",
-            "Cuadro Comparativo IAs", "Locuciones Vocaroo", "TTSMaker Audios", "Pixabay & Ética",
-            "Google Forms Educativo", "Suno y Udio Música", "Publicación en Netlify"
+            "¿Qué es la Inteligencia Artificial? / Fundamentos de LLMs",
+            "¿Qué es un Prompt? Prompt Engineering Base",
+            "Semejanzas y diferencias entre Chatgpt, Gemini AI, Copilot, Perplexity y Deepseek",
+            "Tipos de Prompts: Secuenciales, Estructurales, Argumentales, Comparativos",
+            "Prompts de comunicación personales / Creando tu propia comunicación",
+            "Creando diferentes Prompts: canciones, música, imágenes, Ensayos, Resumen, videos",
+            "Suno Música",
+            "Suscripción y primera canción en Suno (Creatividad asistida)",
+            "Conociendo bancos de audio, videos e imágenes para mis proyectos",
+            "Produciendo mis propios audios: TTS Maker, Descript, Clipchamp, Google Translator",
+            "Editores de Música y bancos de audio",
+            "Creando mi proyecto integral de música",
+            "Certificación Internacional 1: Elements of AI (Helsinki)",
+            "Certificación Internacional 2: Cisco AI Basics (Cisco Skills for All)",
+            "Cierre de Nivel y Evaluación Interactiva (Examen Nivel 1)"
         ];
     } else if(nivel === 2) {
         return [
@@ -126,8 +137,30 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
     // Actualizar título activo
     document.getElementById('titulo-leccion-activa').innerText = `Nivel ${nivel} - Lección ${leccionNum}: ${nombre}`;
     
-    // Video de la lección
-    document.getElementById('video-leccion').src = "https://www.youtube.com/embed/LcqjlzUucIU";
+    // Asignación dinámica del video por nivel y lección
+    let urlVideo = "https://www.youtube.com/embed/LcqjlzUucIU"; // Video por defecto o respaldo
+
+    if (nivel === 1) {
+        if (leccionNum === 1) {
+            urlVideo = "https://www.youtube.com/embed/_TCPuoHrbiQ";
+        } else if (leccionNum === 2) {
+            urlVideo = "https://www.youtube.com/embed/VWWM7CGwouw";
+        } else if (leccionNum === 3) {
+            urlVideo = "https://www.youtube.com/embed/V8GKTO6_wTw";
+        } else if (leccionNum === 4) {
+            urlVideo = "https://www.youtube.com/embed/DfbNqnjcDwA";
+        } else if (leccionNum === 5) {
+            urlVideo = "https://www.youtube.com/embed/ujJZO6ARCpA";
+        } else if (leccionNum === 6) {
+            urlVideo = "https://www.youtube.com/embed/V332AkH1h6A";
+        } else if (leccionNum === 7) {
+            urlVideo = "https://www.youtube.com/embed/1RumCMbUHUA";
+        }
+        // Aquí iremos agregando los demás links conforme subas los videos de las siguientes lecciones:
+        // else if (leccionNum === 8) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+    }
+
+    document.getElementById('video-leccion').src = urlVideo;
     
     // Cálculo de la numeración continua de los 60 PDFs de estudio por niveles
     let numeroGuia = leccionNum;
