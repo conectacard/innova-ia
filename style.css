@@ -251,6 +251,30 @@ body {
     overflow: hidden;
 }
 
+/* ================= AJUSTE ESPECIAL PARA CELULARES Y PANTALLAS PEQUEÑAS ================= */
+@media (max-width: 768px) {
+    .app-container {
+        height: 100vh;
+        max-height: none;
+        padding: 10px;
+        border-radius: 0;
+    }
+    
+    .aula-grid {
+        grid-template-columns: 1fr; /* Todo en una sola columna hacia abajo */
+        grid-template-rows: 140px 1fr; /* El menú lateral se hace compacto y el contenido toma el resto */
+        overflow-y: auto;
+    }
+
+    .lecciones-sidebar {
+        max-height: 140px; /* Altura controlada para que las lecciones no coman toda la pantalla */
+    }
+
+    .video-container {
+        padding-bottom: 56.25%; /* Proporción estándar de video de YouTube (16:9) perfecta para celular */
+    }
+}
+
 /* Marco hermoso para el menú lateral de lecciones */
 .lecciones-sidebar {
     background: #F8FAFC;
