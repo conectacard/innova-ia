@@ -71,11 +71,11 @@ function cargarNombresLeccion(nivel) {
             "Prompts de comunicación personales / Creando tu propia comunicación",
             "Creando diferentes Prompts: canciones, música, imágenes, Ensayos, Resumen, videos",
             "Suno Música",
-            "Suscripción y primera canción en Suno (Creatividad asistida)",
+            "Creacion de productos en Gemini y ChatGPT",
             "Conociendo bancos de audio, videos e imágenes para mis proyectos",
             "Produciendo mis propios audios: TTS Maker, Descript, Clipchamp, Google Translator",
-            "Editores de Música y bancos de audio",
-            "Creando mi proyecto integral de música",
+            "Editores de Música",
+            "Conociendo las Certificaciones gratuitas que podré obtener al terminar el curso",
             "Certificación Internacional 1: Elements of AI (Helsinki)",
             "Certificación Internacional 2: Cisco AI Basics (Cisco Skills for All)",
             "Cierre de Nivel y Evaluación Interactiva (Examen Nivel 1)"
@@ -155,9 +155,11 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/V332AkH1h6A";
         } else if (leccionNum === 7) {
             urlVideo = "https://www.youtube.com/embed/1RumCMbUHUA";
+        } else if (leccionNum === 8) {
+            urlVideo = "https://www.youtube.com/embed/eEvwJRPhB90";
         }
         // Aquí iremos agregando los demás links conforme subas los videos de las siguientes lecciones:
-        // else if (leccionNum === 8) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 9) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     }
 
     document.getElementById('video-leccion').src = urlVideo;
