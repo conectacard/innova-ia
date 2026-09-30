@@ -202,25 +202,13 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
         panelEvaluacion.style.display = "block";
         const btnEval = panelEvaluacion.querySelector('.btn-eval');
         
-        if (nivel === 1) {
-            btnEval.href = "nivel1_examen.html";
-            btnEval.onclick = null;
-            btnEval.innerHTML = "📝 Presentar Examen de Nivel para pasar al siguiente nivel";
-        } else if (nivel === 2) {
-            btnEval.href = "nivel2_examen.html";
-            btnEval.onclick = null;
-            btnEval.innerHTML = "📝 Presentar Examen de Nivel para pasar al siguiente nivel";
-        } else if (nivel === 3) {
-            btnEval.href = "nivel3_examen.html";
-            btnEval.onclick = null;
-            btnEval.innerHTML = "📝 Presentar Examen de Nivel para pasar al siguiente nivel";
-        } else if (nivel === 4) {
-            btnEval.href = "nivel4_examen.html";
-            btnEval.onclick = null;
-            btnEval.innerHTML = "📝 Presentar Examen de Nivel (&gt;70% para Diploma)";
+        // Asignación limpia del examen correspondiente por nivel
+        btnEval.href = `nivel${nivel}_examen.html`;
+        btnEval.onclick = null;
+        
+        if (nivel === 4) {
+            btnEval.innerHTML = "📝 Presentar Examen Final y Solicitar Diploma (&gt;70% + Link de Portafolio)";
         } else {
-            btnEval.href = "#";
-            btnEval.onclick = function() { lanzarEvaluacionNivel(nivel); return false; };
             btnEval.innerHTML = "📝 Presentar Examen de Nivel para pasar al siguiente nivel";
         }
     } else {
