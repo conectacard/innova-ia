@@ -70,36 +70,49 @@ function cargarNombresLeccion(nivel) {
             "Tipos de Prompts: Secuenciales, Estructurales, Argumentales, Comparativos",
             "Prompts de comunicación personales / Creando tu propia comunicación",
             "Creando diferentes Prompts: canciones, música, imágenes, Ensayos, Resumen, videos",
-            "Suno Música",
+            "Suno Música / Otras IA de Música",
             "Creacion de productos en Gemini y ChatGPT",
             "Conociendo bancos de audio, videos e imágenes para mis proyectos",
-            "Produciendo mis propios audios: TTS Maker, Descript, Clipchamp, Google Translator",
-            "Editores de Música",
-            "Conociendo las Certificaciones gratuitas que podré obtener al terminar el curso",
-            "Certificación Internacional 1: Elements of AI (Helsinki)",
-            "Certificación Internacional 2: Cisco AI Basics (Cisco Skills for All)",
-            "Cierre de Nivel y Evaluación Interactiva (Examen Nivel 1)"
+            "Trucos de Captura de pantalla y separación de audio y videos para crear tus propios Bancos de Videos, Imagenes y audios"
         ];
     } else if(nivel === 2) {
         return [
-            "DALL-E 3 Imágenes", "Leonardo AI Estilos", "Clipchamp Edición", "Descript Guiones",
-            "Meshy AI Modelado", "Spline AI Interfaces", "Luma AI Genie 3D", "Pika 2.5 Video",
-            "Hailuo 2.3 Sintético", "Veo 3 Animación", "Seedance 2 Cinemática", "Combinación Multimedia",
-            "Optimización de Assets", "Proyecto Multimedia", "Cierre Evaluación Nivel 2"
+            "Creación de imagenes con IA: Microsoft Designer, Leonardo AI, DALL-E, Gemini,DeepAI Image Generator, Craiyon",
+            "Creacion de imagenes 3D: Meshy AI, Hunyuan 3D, Trellis, Picasso IA",
+            "Creación de voz en off: ElevenLabs, Descript, TTS Maker",
+            "Creadores de Video Sintético y Cinemático (De texto a video): Runway / Pika / Kling / Hailuo",
+            "Generadores de Video por IA con Ritmo Musical / Creativo: Seedance",
+            "Avatares Parlantes y Presentadores Institucionales: HeyGen y Synthesia",
+            "Editores de Video Inteligentes (Asistidos por IA): InVideo.io",
+            "Generadores de presentaciones con IA: Gamma App, Tome (tome.app)",
+            "Editor de código fuente y software VS CODE y estructura de Carpetas",
+            "Haciendo mi primer landign page con VS CODE + GEMINI"
         ];
     } else if(nivel === 3) {
         return [
-            "VS Code Instalación", "Configuración y Atajos", "Extensiones Clave", "Sintaxis HTML5",
-            "Diseño CSS3 Moderno", "JavaScript Variables", "JavaScript Eventos", "JavaScript Funciones",
-            "Copilot en el Editor", "DeepSeek para Código", "Estructura PWA Local", "Embed de Videos",
-            "Paneles de Recursos", "Depuración de Errores", "Evaluación Nivel 3"
+            "Creacion de Tarjeta de Presentación Digital o \"Link in Bio\" (Estilo Linktree)",
+            "Creación de Mini Agenda / Calendario",
+            "Creación de Temario para examen",
+            "Creación de Juego de tic tac toe gato",
+            "Creación de Juego de Memoria (Match Cards)",
+            "Creación de Una estación de Radio (Vocaroo)",
+            "Creación de juego de memoria con Estructura de carpetas",
+            "Creacion de Tarjeta de Presentación Digital con estructura de carpetas",
+            "Creación de Calendario con estructura de carpetas",
+            "Usando Surge / Netifly / Github / Cloud falre para subir Proyectos"
         ];
     } else {
         return [
-            "Proyecto 1: Landing Page", "Proyecto 2: Generador Prompts", "Proyecto 3: Memorama", "Proyecto 4: Solitario",
-            "Proyecto 5: Calculadora", "Proyecto 6: Mini CRM", "Proyecto 7: Calendario", "Proyecto 8: Quiz Evaluador",
-            "Proyecto 9: Reproductor Media", "Proyecto 10: Bloc Notas", "Proyecto 11: Talent Cards", "Proyecto 12: Reloj Mundial",
-            "Proyecto 13: Catálogo Web", "Proyecto 14: Tablero Kanban", "Proyecto 15: PWA Final"
+            "Creacion de una landign page o siti web propio con VS CODE + GEMINI",
+            "Creacion de su propia y personal Tarjeta de Presentación Digital propia",
+            "Creación de su propia y personal Mini Agenda / Calendario",
+            "Creación de su propio y personal Temario para examen",
+            "Creación de su propia estación de radio",
+            "Preparando la Certificación Internacional 1: Elements of AI (Helsinki)",
+            "Preparando la Certificación Microsoft & LinkedIn Learning: Career Essentials in Generative AI",
+            "Google Cloud Skills Boost: Generative AI Fundamentals (Skill Badge)",
+            "Certificación Cisco Networking Academy (Skills for All): Introduction to Data Science / AI Basics",
+            "Examen final y Cierre de Semestre"
         ];
     }
 }
@@ -157,21 +170,23 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/1RumCMbUHUA";
         } else if (leccionNum === 8) {
             urlVideo = "https://www.youtube.com/embed/eEvwJRPhB90";
+        } else if (leccionNum === 9) {
+            urlVideo = "https://www.youtube.com/embed/mpPosPn8yjk";
         }
         // Aquí iremos agregando los demás links conforme subas los videos de las siguientes lecciones:
-        // else if (leccionNum === 9) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 10) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     }
 
     document.getElementById('video-leccion').src = urlVideo;
     
-    // Cálculo de la numeración continua de los 60 PDFs de estudio por niveles
+    // Cálculo de la numeración continua de los 40 PDFs de estudio por niveles (10 por nivel)
     let numeroGuia = leccionNum;
     if (nivel === 2) {
-        numeroGuia = leccionNum + 15;
+        numeroGuia = leccionNum + 10;
     } else if (nivel === 3) {
-        numeroGuia = leccionNum + 30;
+        numeroGuia = leccionNum + 20;
     } else if (nivel === 4) {
-        numeroGuia = leccionNum + 45;
+        numeroGuia = leccionNum + 30;
     }
     
     // Conexión dinámica a los subdominios independientes de cada nivel
@@ -181,9 +196,9 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
     btnPdf.href = rutaPdf;
     btnPdf.download = `lecc_${numeroGuia}_guia.pdf`;
 
-    // Control visual del Examen: Solo aparece en la lección 15 (última del nivel)
+    // Control visual del Examen: Solo aparece en la lección 10 (última del nivel)
     const panelEvaluacion = document.querySelector('.evaluacion-panel');
-    if (leccionNum === 15) {
+    if (leccionNum === 10) {
         panelEvaluacion.style.display = "block";
         const btnEval = panelEvaluacion.querySelector('.btn-eval');
         
@@ -216,7 +231,7 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
 function lanzarEvaluacionNivel(nivelExamen) {
     const aciertos = prompt(`Evaluación del Nivel ${nivelExamen}:\n¿Cuántos aciertos obtuvo el alumno en el cuestionario? (Ingresa el número de aciertos):`);
     if(aciertos !== null) {
-        const totalPreguntas = 15;
+        const totalPreguntas = 10;
         const porcentaje = (parseInt(aciertos) / totalPreguntas) * 100;
         if(porcentaje >= 70) {
             alert(`¡Aprobado con ${porcentaje.toFixed(0)}% de aciertos! Has acreditado el Nivel ${nivelExamen} y puedes avanzar al siguiente nivel.`);
