@@ -172,9 +172,11 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/eEvwJRPhB90";
         } else if (leccionNum === 9) {
             urlVideo = "https://www.youtube.com/embed/mpPosPn8yjk";
+        } else if (leccionNum === 10) {
+            urlVideo = "https://www.youtube.com/embed/LD4y0XzMilY";
         }
         // Aquí iremos agregando los demás links conforme subas los videos de las siguientes lecciones:
-        // else if (leccionNum === 10) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 11) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     }
 
     document.getElementById('video-leccion').src = urlVideo;
