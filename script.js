@@ -175,8 +175,14 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
         } else if (leccionNum === 10) {
             urlVideo = "https://www.youtube.com/embed/LD4y0XzMilY";
         }
-        // Aquí iremos agregando los demás links conforme subas los videos de las siguientes lecciones:
-        // else if (leccionNum === 11) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+    } else if (nivel === 2) {
+        if (leccionNum === 1) {
+            urlVideo = "https://www.youtube.com/embed/ErJu0AcepMM"; // Nivel 2 - Lección 1: Creación de imagenes con IA (Microsoft Designer, Leonardo AI, DALL-E, Gemini, DeepAI, Craiyon)
+        } else if (leccionNum === 2) {
+            urlVideo = "https://www.youtube.com/embed/xgsFlixlQ90"; // Nivel 2 - Lección 2: Creacion de imagenes 3D (Meshy AI, Hunyuan 3D, Trellis, Picasso IA)
+        }
+        // Aquí iremos agregando los demás links conforme subas los videos de las siguientes lecciones del Nivel 2:
+        // else if (leccionNum === 3) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     }
 
     document.getElementById('video-leccion').src = urlVideo;
