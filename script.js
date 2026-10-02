@@ -187,13 +187,9 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
 
     document.getElementById('video-leccion').src = urlVideo;
     
-    // Numeración relativa por nivel (del 1 al 10 en cada carpeta)
+    // Numeración relativa por nivel (del 1 al 10 en cada carpeta de nivel)
     let numeroGuia = leccionNum;
-    let carpetaNivel = `Nivel${nivel}`;
-    let rutaPdf = `${carpetaNivel}/lecc_${numeroGuia}_guia.pdf`;
-    
-    // Conexión dinámica a los subdominios independientes de cada nivel
-    let rutaPdf = `https://nivel${nivel}.pideya.contact/lecc_${numeroGuia}_guia.pdf`;
+    let rutaPdf = `Nivel${nivel}/lecc_${numeroGuia}_guia.pdf`;
     
     const btnPdf = document.getElementById('btn-pdf');
     btnPdf.href = rutaPdf;
