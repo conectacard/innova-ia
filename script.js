@@ -187,15 +187,10 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
 
     document.getElementById('video-leccion').src = urlVideo;
     
-    // Cálculo de la numeración continua de los 40 PDFs de estudio por niveles (10 por nivel)
+    // Numeración relativa por nivel (del 1 al 10 en cada carpeta)
     let numeroGuia = leccionNum;
-    if (nivel === 2) {
-        numeroGuia = leccionNum + 10;
-    } else if (nivel === 3) {
-        numeroGuia = leccionNum + 20;
-    } else if (nivel === 4) {
-        numeroGuia = leccionNum + 30;
-    }
+    let carpetaNivel = `Nivel${nivel}`;
+    let rutaPdf = `${carpetaNivel}/lecc_${numeroGuia}_guia.pdf`;
     
     // Conexión dinámica a los subdominios independientes de cada nivel
     let rutaPdf = `https://nivel${nivel}.pideya.contact/lecc_${numeroGuia}_guia.pdf`;
