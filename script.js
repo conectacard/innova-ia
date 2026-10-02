@@ -177,23 +177,26 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
         }
     } else if (nivel === 2) {
         if (leccionNum === 1) {
-            urlVideo = "https://www.youtube.com/embed/ErJu0AcepMM"; // Nivel 2 - Lección 1: Creación de imagenes con IA (Microsoft Designer, Leonardo AI, DALL-E, Gemini, DeepAI, Craiyon)
+            urlVideo = "https://www.youtube.com/embed/ErJu0AcepMM"; // Nivel 2 - Lección 1
         } else if (leccionNum === 2) {
-            urlVideo = "https://www.youtube.com/embed/xgsFlixlQ90"; // Nivel 2 - Lección 2: Creacion de imagenes 3D (Meshy AI, Hunyuan 3D, Trellis, Picasso IA)
+            urlVideo = "https://www.youtube.com/embed/xgsFlixlQ90"; // Nivel 2 - Lección 2
         }
-        // Aquí iremos agregando los demás links conforme subas los videos de las siguientes lecciones del Nivel 2:
+        // Aquí puedes seguir agregando tus demás links de video conforme los vayas subiendo:
         // else if (leccionNum === 3) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+    } else if (nivel === 3) {
+        // Aquí irán tus videos del Nivel 3
+    } else if (nivel === 4) {
+        // Aquí irán tus videos del Nivel 4
     }
 
     document.getElementById('video-leccion').src = urlVideo;
     
-    // Numeración absoluta exacta por nivel y lección
-    let numeroGuia = leccionNum;
-    let rutaPdf = `https://innova-ia.pideya.contact/Nivel${nivel}/lecc_${numeroGuia}_guia.pdf`;
+    // CORRECCIÓN DEL PDF (Ruta relativa directa para evitar el 404 en GitHub Pages)
+    let rutaPdf = `Nivel${nivel}/lecc_${leccionNum}_guia.pdf`;
     
     const btnPdf = document.getElementById('btn-pdf');
     btnPdf.href = rutaPdf;
-    btnPdf.download = `lecc_${numeroGuia}_guia.pdf`;
+    btnPdf.setAttribute('target', '_blank');
 
     // Control visual del Examen: Solo aparece en la lección 10 (última del nivel)
     const panelEvaluacion = document.querySelector('.evaluacion-panel');
