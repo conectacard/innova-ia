@@ -187,9 +187,9 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
 
     document.getElementById('video-leccion').src = urlVideo;
     
-    // Numeración relativa por nivel respetando la 'N' mayúscula de las carpetas
+    // Numeración absoluta exacta por nivel y lección
     let numeroGuia = leccionNum;
-    let rutaPdf = `Nivel${nivel}/lecc_${numeroGuia}_guia.pdf`;
+    let rutaPdf = `https://innova-ia.pideya.contact/Nivel${nivel}/lecc_${numeroGuia}_guia.pdf`;
     
     const btnPdf = document.getElementById('btn-pdf');
     btnPdf.href = rutaPdf;
