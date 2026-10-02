@@ -187,7 +187,7 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
 
     document.getElementById('video-leccion').src = urlVideo;
     
-    // Numeración relativa por nivel (del 1 al 10 en cada carpeta de nivel)
+    // Numeración relativa por nivel respetando la 'N' mayúscula de las carpetas
     let numeroGuia = leccionNum;
     let rutaPdf = `Nivel${nivel}/lecc_${numeroGuia}_guia.pdf`;
     
