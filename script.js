@@ -177,12 +177,16 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
         }
     } else if (nivel === 2) {
         if (leccionNum === 1) {
-            urlVideo = "https://www.youtube.com/embed/ErJu0AcepMM"; // Nivel 2 - Lección 1
+            urlVideo = "https://www.youtube.com/embed/ErJu0AcepMM"; // Nivel 2 - Lección 1: Creación de imagenes con IA (Microsoft Designer, Leonardo AI, DALL-E, Gemini, DeepAI Image Generator, Craiyon)
         } else if (leccionNum === 2) {
-            urlVideo = "https://www.youtube.com/embed/xgsFlixlQ90"; // Nivel 2 - Lección 2
+            urlVideo = "https://www.youtube.com/embed/xgsFlixlQ90"; // Nivel 2 - Lección 2: Creacion de imagenes 3D (Meshy AI, Hunyuan 3D, Trellis, Picasso IA)
+        } else if (leccionNum === 3) {
+            urlVideo = "https://www.youtube.com/embed/zg7gWVz8WPU"; // Nivel 2 - Lección 3: Creación de voz en off (ElevenLabs, Descript, TTS Maker)
+        } else if (leccionNum === 4) {
+            urlVideo = "https://www.youtube.com/embed/QsupY7WjAjE"; // Nivel 2 - Lección 4: Creadores de Video Sintético y Cinemático (De texto a video): Runway / Pika / Kling / Hailuo
         }
         // Aquí puedes seguir agregando tus demás links de video conforme los vayas subiendo:
-        // else if (leccionNum === 3) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 5) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 3) {
         // Aquí irán tus videos del Nivel 3
     } else if (nivel === 4) {
