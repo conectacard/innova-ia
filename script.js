@@ -82,11 +82,11 @@ function cargarNombresLeccion(nivel) {
             "Creación de voz en off: ElevenLabs, Descript, TTS Maker",
             "Creadores de Video Sintético y Cinemático (De texto a video): Runway / Pika / Kling / Hailuo",
             "Generadores de Video por IA con Ritmo Musical / Creativo: Seedance",
-            "Avatares Parlantes y Presentadores Institucionales: HeyGen y Synthesia",
-            "Editores de Video Inteligentes (Asistidos por IA): InVideo.io",
+            "Avatares y Presentadores: HeyGen y Synthesia / Editores de Video: InVideo.io ",
             "Generadores de presentaciones con IA: Gamma App, Tome (tome.app)",
             "Editor de código fuente y software VS CODE y estructura de Carpetas",
-            "Haciendo mi primer landign page con VS CODE + GEMINI"
+            "Haciendo mi primer landign page con VS CODE + GEMINI",
+            "¿Porqué mi proyecto no funciona?"
         ];
     } else if(nivel === 3) {
         return [
@@ -103,11 +103,11 @@ function cargarNombresLeccion(nivel) {
         ];
     } else {
         return [
-            "Creacion de una landign page o siti web propio con VS CODE + GEMINI",
-            "Creacion de su propia y personal Tarjeta de Presentación Digital propia",
-            "Creación de su propia y personal Mini Agenda / Calendario",
-            "Creación de su propio y personal Temario para examen",
-            "Creación de su propia estación de radio",
+            "Creacion de una landign page o sitio web propio con VS CODE + GEMINI",
+            "Creacion de mi propia y personal Tarjeta de Presentación Digital propia",
+            "Creación de mi propia y personal Mini Agenda / Calendario",
+            "Creación de mi propio y personal Temario para examen",
+            "Creación de mi propia estación de radio",
             "Preparando la Certificación Internacional 1: Elements of AI (Helsinki)",
             "Preparando la Certificación Microsoft & LinkedIn Learning: Career Essentials in Generative AI",
             "Google Cloud Skills Boost: Generative AI Fundamentals (Skill Badge)",
