@@ -81,12 +81,12 @@ function cargarNombresLeccion(nivel) {
             "Creacion de imagenes 3D: Meshy AI, Hunyuan 3D, Trellis, Picasso IA",
             "Creación de voz en off: ElevenLabs, Descript, TTS Maker",
             "Creadores de Video Sintético y Cinemático (De texto a video): Runway / Pika / Kling / Hailuo",
+            "Avatares y Presentadores: HeyGen y Synthesia / Editores de Video: InVideo.io",
             "Generadores de Video por IA con Ritmo Musical / Creativo: Seedance",
-            "Avatares y Presentadores: HeyGen y Synthesia / Editores de Video: InVideo.io ",
             "Generadores de presentaciones con IA: Gamma App, Tome (tome.app)",
             "Editor de código fuente y software VS CODE y estructura de Carpetas",
-            "Haciendo mi primer landign page con VS CODE + GEMINI",
-            "¿Porqué mi proyecto no funciona?"
+            "¿Porqué mi proyecto no funciona?",
+            "Haciendo mi primer Proyecto con VS CODE + GEMINI"
         ];
     } else if(nivel === 3) {
         return [
@@ -184,9 +184,21 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/zg7gWVz8WPU"; // Nivel 2 - Lección 3: Creación de voz en off (ElevenLabs, Descript, TTS Maker)
         } else if (leccionNum === 4) {
             urlVideo = "https://www.youtube.com/embed/QsupY7WjAjE"; // Nivel 2 - Lección 4: Creadores de Video Sintético y Cinemático (De texto a video): Runway / Pika / Kling / Hailuo
+        } else if (leccionNum === 5) {
+            urlVideo = "https://www.youtube.com/embed/BSn_8W_BNaQ"; // Nivel 2 - Lección 5: Avatares y Presentadores (HeyGen y Synthesia) / Editores de Video (InVideo.io)
+        } else if (leccionNum === 6) {
+            urlVideo = "https://www.youtube.com/embed/yPQCQtccjTE"; // Nivel 2 - Lección 6: Generadores de Video por IA con Ritmo Musical / Creativo: Seedance
+        } else if (leccionNum === 7) {
+            urlVideo = "https://www.youtube.com/embed/xq5XT2alQ0Y"; // Nivel 2 - Lección 7: Generadores de presentaciones con IA: Gamma App, Tome (tome.app)
+        } else if (leccionNum === 8) {
+            urlVideo = "https://www.youtube.com/embed/dUH52-Fb2cU"; // Nivel 2 - Lección 8: Editor de código fuente y software VS CODE y estructura de Carpetas
+        } else if (leccionNum === 9) {
+            urlVideo = "https://www.youtube.com/embed/hIjNna_BhC0"; // Nivel 2 - Lección 9: ¿Porqué mi proyecto no funciona?
+        } else if (leccionNum === 10) {
+            urlVideo = "https://www.youtube.com/embed/N6xiqjp80SQ"; // Nivel 2 - Lección 10: Haciendo mi primer Proyecto con VS CODE + GEMINI
         }
         // Aquí puedes seguir agregando tus demás links de video conforme los vayas subiendo:
-        // else if (leccionNum === 5) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 11) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 3) {
         // Aquí irán tus videos del Nivel 3
     } else if (nivel === 4) {
