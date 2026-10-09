@@ -90,8 +90,8 @@ function cargarNombresLeccion(nivel) {
         ];
     } else if(nivel === 3) {
         return [
-            "Creacion de Tarjeta de Presentación Digital o \"Link in Bio\" (Estilo Linktree)",
-            "Creación de Mini Agenda / Calendario",
+            "Creación de Catálogo Musical",
+            "Creación de Landing Pages",
             "Creación de Temario para examen",
             "Creación de Juego de tic tac toe gato",
             "Creación de Juego de Memoria (Match Cards)",
@@ -197,10 +197,14 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
         } else if (leccionNum === 10) {
             urlVideo = "https://www.youtube.com/embed/N6xiqjp80SQ"; // Nivel 2 - Lección 10: Haciendo mi primer Proyecto con VS CODE + GEMINI
         }
-        // Aquí puedes seguir agregando tus demás links de video conforme los vayas subiendo:
-        // else if (leccionNum === 11) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 3) {
-        // Aquí irán tus videos del Nivel 3
+        if (leccionNum === 1) {
+            urlVideo = "https://www.youtube.com/embed/tOk682sJE8Y"; // Nivel 3 - Lección 1: Creación de Catálogo Musical
+        } else if (leccionNum === 2) {
+            urlVideo = "https://www.youtube.com/embed/fyke4_6W68s"; // Nivel 3 - Lección 2: Creación de Landing Pages
+        }
+        // Aquí puedes seguir agregando tus demás links de video del Nivel 3 conforme los vayas subiendo:
+        // else if (leccionNum === 3) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 4) {
         // Aquí irán tus videos del Nivel 4
     }
