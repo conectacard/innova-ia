@@ -91,23 +91,23 @@ function cargarNombresLeccion(nivel) {
     } else if(nivel === 3) {
         return [
             "Creación de Catálogo Musical",
-            "Creación de Landing Pages",
-            "Creación de Temario para examen",
-            "Creación de Juego de tic tac toe gato",
-            "Creación de Juego de Memoria (Match Cards)",
+            "Creación de Landing Pages: Cafetería y Agencia Automotriz",
+            "Creación de Juego de tic tac toe gato y Memorama",
+            "Creación de Agenda Calendario y ID de Presentación",
+            "Creación de Tarjeta de presentacion con CRM y formularios",
+            "Creación de Catálogo de videos para aprender idiomas",
             "Creación de Una estación de Radio (Vocaroo)",
-            "Creación de juego de memoria con Estructura de carpetas",
-            "Creacion de Tarjeta de Presentación Digital con estructura de carpetas",
-            "Creación de Calendario con estructura de carpetas",
-            "Usando Surge / Netifly / Github / Cloud falre para subir Proyectos"
+            "Usando Surge / Netifly / Github / Cloud flare para subir Proyectos",
+            "Edicion de nombres genericos en los códigos",
+            "Edicion de bloques en los códigos"
         ];
     } else {
         return [
-            "Creacion de una landign page o sitio web propio con VS CODE + GEMINI",
-            "Creacion de mi propia y personal Tarjeta de Presentación Digital propia",
-            "Creación de mi propia y personal Mini Agenda / Calendario",
-            "Creación de mi propio y personal Temario para examen",
-            "Creación de mi propia estación de radio",
+            "Productos que puedes hacer en VS CODE: Formularios de examenes, Test, calculadoras, etc.",
+            "Creacion de mi propio sitio web con imagenes y enlaces",
+            "Creación de mi propia app o juego en VS CODE",
+            "Creación de mi propio Video con imagenes, audios y clips",
+            "Creación de mi propio Catálogo con imagenes, audios y videos",
             "Preparando la Certificación Internacional 1: Elements of AI (Helsinki)",
             "Preparando la Certificación Microsoft & LinkedIn Learning: Career Essentials in Generative AI",
             "Google Cloud Skills Boost: Generative AI Fundamentals (Skill Badge)",
@@ -202,9 +202,13 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/tOk682sJE8Y"; // Nivel 3 - Lección 1: Creación de Catálogo Musical
         } else if (leccionNum === 2) {
             urlVideo = "https://www.youtube.com/embed/fyke4_6W68s"; // Nivel 3 - Lección 2: Creación de Landing Pages
+        } else if (leccionNum === 3) {
+            urlVideo = "https://www.youtube.com/embed/S6Vse1UTCiM"; // Nivel 3 - Lección 3: Creación de Juego de tic tac toe gato y Memorama
+        } else if (leccionNum === 4) {
+            urlVideo = "https://www.youtube.com/embed/v8s-5kFWaXc"; // Nivel 3 - Lección 4: Creación de Agenda Calendario y ID de Presentación
         }
         // Aquí puedes seguir agregando tus demás links de video del Nivel 3 conforme los vayas subiendo:
-        // else if (leccionNum === 3) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 5) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 4) {
         // Aquí irán tus videos del Nivel 4
     }
