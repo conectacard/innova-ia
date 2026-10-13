@@ -94,7 +94,7 @@ function cargarNombresLeccion(nivel) {
             "Creación de Landing Pages: Cafetería y Agencia Automotriz",
             "Creación de Juego de tic tac toe gato y Memorama",
             "Creación de Agenda Calendario y ID de Presentación",
-            "Creación de Tarjeta de presentacion con CRM y formularios",
+            "Creación de CRM, Sistemas de gestión y formularios",
             "Creación de Catálogo de videos para aprender idiomas",
             "Creación de Una estación de Radio (Vocaroo)",
             "Usando Surge / Netifly / Github / Cloud flare para subir Proyectos",
@@ -206,9 +206,11 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/S6Vse1UTCiM"; // Nivel 3 - Lección 3: Creación de Juego de tic tac toe gato y Memorama
         } else if (leccionNum === 4) {
             urlVideo = "https://www.youtube.com/embed/v8s-5kFWaXc"; // Nivel 3 - Lección 4: Creación de Agenda Calendario y ID de Presentación
+        } else if (leccionNum === 5) {
+            urlVideo = "https://www.youtube.com/embed/LcGUO_9noOs"; // Nivel 3 - Lección 5: Creación de CRM, Sistemas de gestión y formularios
         }
         // Aquí puedes seguir agregando tus demás links de video del Nivel 3 conforme los vayas subiendo:
-        // else if (leccionNum === 5) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 6) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 4) {
         // Aquí irán tus videos del Nivel 4
     }
