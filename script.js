@@ -208,9 +208,11 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/v8s-5kFWaXc"; // Nivel 3 - Lección 4: Creación de Agenda Calendario y ID de Presentación
         } else if (leccionNum === 5) {
             urlVideo = "https://www.youtube.com/embed/LcGUO_9noOs"; // Nivel 3 - Lección 5: Creación de CRM, Sistemas de gestión y formularios
+        } else if (leccionNum === 6) {
+            urlVideo = "https://www.youtube.com/embed/bUpHZJhFmuc"; // Nivel 3 - Lección 6: Creación de Catálogo de videos para aprender idiomas
         }
         // Aquí puedes seguir agregando tus demás links de video del Nivel 3 conforme los vayas subiendo:
-        // else if (leccionNum === 6) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 7) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 4) {
         // Aquí irán tus videos del Nivel 4
     }
