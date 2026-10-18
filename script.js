@@ -97,9 +97,9 @@ function cargarNombresLeccion(nivel) {
             "Creación de CRM, Sistemas de gestión y formularios",
             "Creación de Catálogo de videos para aprender idiomas",
             "Creación de Una estación de Radio (Vocaroo)",
-            "Usando Surge / Netifly / Github / Cloud flare para subir Proyectos",
-            "Edicion de nombres genericos en los códigos",
-            "Edicion de bloques en los códigos"
+            "Edicion por sustitución en los códigos y carpetas",
+            "Edicion de bloques en los códigos",
+            "Usando Surge / Netifly / Github / Cloud flare para subir Proyectos"
         ];
     } else {
         return [
@@ -212,9 +212,11 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/bUpHZJhFmuc"; // Nivel 3 - Lección 6: Creación de Catálogo de videos para aprender idiomas
         } else if (leccionNum === 7) {
             urlVideo = "https://www.youtube.com/embed/7XATk2Oo69A"; // Nivel 3 - Lección 7: Creación de Una estación de Radio (Vocaroo)
+        } else if (leccionNum === 8) {
+            urlVideo = "https://www.youtube.com/embed/3UFVR3klVYY"; // Nivel 3 - Lección 8: Edicion por sustitución en los códigos y carpetas
         }
         // Aquí puedes seguir agregando tus demás links de video del Nivel 3 conforme los vayas subiendo:
-        // else if (leccionNum === 8) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 9) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 4) {
         // Aquí irán tus videos del Nivel 4
     }
