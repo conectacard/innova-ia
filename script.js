@@ -98,7 +98,7 @@ function cargarNombresLeccion(nivel) {
             "Creación de Catálogo de videos para aprender idiomas",
             "Creación de Una estación de Radio (Vocaroo)",
             "Edicion por sustitución en los códigos y carpetas",
-            "Edicion de bloques en los códigos",
+            "Edicion por Adición y Extensión",
             "Usando Surge / Netifly / Github / Cloud flare para subir Proyectos"
         ];
     } else {
