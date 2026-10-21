@@ -13,10 +13,7 @@
         label { display: block; margin-bottom: 5px; cursor: pointer; }
         button { display: block; width: 100%; background: #2563EB; color: #fff; border: none; padding: 12px; font-size: 16px; border-radius: 4px; cursor: pointer; margin-top: 20px; font-weight: bold; }
         button:hover { background: #1D4ED8; }
-        #result-section, #diploma-section { display: none; text-align: center; margin-top: 30px; padding: 20px; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 4px; }
-        .input-group { margin: 15px 0; text-align: left; }
-        .input-group label { font-weight: bold; }
-        .input-group input { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        #result-section { display: none; text-align: center; margin-top: 30px; padding: 20px; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -24,7 +21,7 @@
 <div class="container">
     <h1>Examen Final - Nivel 2</h1>
     <h2>Creatividad Visual, Presentaciones (Gamma) y Multimedia Sintética</h2>
-    <p style="text-align: center;">Responde las 10 preguntas basadas en el temario del curso. Necesitas al menos un 70% de aciertos para desbloquear tu diploma institucional.</p>
+    <p style="text-align: center;">Responde las 10 preguntas basadas en el temario del curso. Necesitas al menos un 70% de aciertos para aprobar el nivel.</p>
 
     <form id="quiz-form">
         <!-- Pregunta 1 (Correcta: A) -->
@@ -100,36 +97,17 @@
         <button type="button" onclick="evaluarExamen()">Enviar Examen</button>
     </form>
 
-    <!-- Sección de Resultados y Diploma -->
+    <!-- Sección de Resultados (Sin Diploma) -->
     <div id="result-section">
         <h3 id="result-title"></h3>
         <p id="result-msg"></p>
-        
-        <div id="portfolio-container" style="display:none;">
-            <div class="input-group">
-                <label for="student-name">Nombre Completo del Alumno:</label>
-                <input type="text" id="student-name" placeholder="Ej. Juan Pérez López">
-            </div>
-            <button type="button" onclick="generarDiplomaJPG()">Generar y Descargar mi Diploma</button>
-        </div>
     </div>
 </div>
 
-<canvas id="canvas-diploma" style="display:none;"></canvas>
-
 <script>
-    // Se actualizan las respuestas correctas según el inciso asignado a cada pregunta
     const respuestasCorrectas = {
-        q1: 'a', 
-        q2: 'b', 
-        q3: 'c', 
-        q4: 'a', 
-        q5: 'b',
-        q6: 'c', 
-        q7: 'a', 
-        q8: 'b', 
-        q9: 'c', 
-        q10: 'a'
+        q1: 'a', q2: 'b', q3: 'c', q4: 'a', q5: 'b',
+        q6: 'c', q7: 'a', q8: 'b', q9: 'c', q10: 'a'
     };
 
     function evaluarExamen() {
@@ -160,60 +138,16 @@
 
         let title = document.getElementById('result-title');
         let msg = document.getElementById('result-msg');
-        let portContainer = document.getElementById('portfolio-container');
 
         if (porcentaje >= 70) {
             title.style.color = "#10B981";
             title.innerText = "¡Excelente Trabajo, Nivel 2 Aprobado!";
-            msg.innerText = `Obtuviste ${porcentaje.toFixed(0)}% de aciertos (${aciertos}/${total}). ¡Felicidades por dominar la creatividad visual, multimedia sintética y desarrollo web en este nivel! Ingresa tu nombre para obtener tu diploma.`;
-            portContainer.style.display = 'block';
+            msg.innerText = `Obtuviste ${porcentaje.toFixed(0)}% de aciertos (${aciertos}/${total}). ¡Felicidades por completar el Nivel 2! Ya puedes continuar con el siguiente nivel.`;
         } else {
             title.style.color = "#EF4444";
             title.innerText = "Sigue practicando";
             msg.innerText = `Obtuviste ${porcentaje.toFixed(0)}% (${aciertos}/${total}). Necesitas al menos un 70% (7 aciertos) para aprobar. ¡Repasa la guía y vuelve a intentarlo!`;
         }
-    }
-
-    function generarDiplomaJPG() {
-        const nombreAlumno = document.getElementById('student-name').value.trim();
-
-        if (!nombreAlumno) {
-            alert("Por favor escribe tu nombre completo.");
-            return;
-        }
-
-        const canvas = document.getElementById('canvas-diploma');
-        const ctx = canvas.getContext('2d');
-        const img = new Image();
-
-        img.src = 'diploma_base.jpg';
-
-        img.onload = function() {
-            canvas.width = img.width;
-            canvas.height = img.height;
-
-            ctx.drawImage(img, 0, 0);
-
-            ctx.font = "bold 55px Arial, sans-serif";
-            ctx.fillStyle = "#222222";
-            ctx.textAlign = "center";
-
-            const xCoord = canvas.width / 2;
-            const yCoord = canvas.height * 0.47; 
-
-            ctx.fillText(nombreAlumno, xCoord, yCoord);
-
-            const link = document.createElement('a');
-            link.download = `Diploma_Nivel2_${nombreAlumno.replace(/\s+/g, '_')}.jpg`;
-            link.href = canvas.toDataURL('image/jpeg', 0.95);
-            link.click();
-
-            alert("¡Diploma del Nivel 2 generado y descargado con éxito!");
-        };
-
-        img.onerror = function() {
-            alert("No se pudo cargar 'diploma_base.jpg'. Asegúrate de que el archivo esté en la misma carpeta.");
-        };
     }
 </script>
 

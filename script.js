@@ -99,7 +99,7 @@ function cargarNombresLeccion(nivel) {
             "Creación de Una estación de Radio (Vocaroo)",
             "Edicion por sustitución en los códigos y carpetas",
             "Edición por Adición y Extensión",
-            "Usando Surge / Netifly / Github / Cloud flare para subir Proyectos"
+            "Usando Surge / Netifly para subir Proyectos"
         ];
     } else {
         return [
@@ -216,9 +216,11 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/3UFVR3klVYY"; // Nivel 3 - Lección 8: Edicion por sustitución en los códigos y carpetas
         } else if (leccionNum === 9) {
             urlVideo = "https://www.youtube.com/embed/dq7C6WJcUYs"; // Nivel 3 - Lección 9: Edición por Adición y Extensión
+        } else if (leccionNum === 10) {
+            urlVideo = "https://www.youtube.com/embed/T5kW7mMtca0"; // Nivel 3 - Lección 10: Usando Surge / Netlify para subir Proyectos
         }
         // Aquí puedes seguir agregando tus demás links de video del Nivel 3 conforme los vayas subiendo:
-        // else if (leccionNum === 10) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 11) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 4) {
         // Aquí irán tus videos del Nivel 4
     }
