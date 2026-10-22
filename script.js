@@ -103,11 +103,11 @@ function cargarNombresLeccion(nivel) {
         ];
     } else {
         return [
-            "Productos que puedes hacer en VS CODE: Formularios de examenes, Test, calculadoras, etc.",
-            "Creacion de mi propio sitio web con imagenes y enlaces",
-            "Creación de mi propia app o juego en VS CODE",
-            "Creación de mi propio Video con imagenes, audios y clips",
-            "Creación de mi propio Catálogo con imagenes, audios y videos",
+            "Crea una app, Landing Page, etc. sin usar la carpeta assets, solo el promtp",
+            "Crea una app, Landing Page, etc. usando la carpeta assets, con tus propios recursos",
+            "Crea una app, Landing Page, etc. usando la carpeta assets, y links de videos",
+            "Crea una app, Landing Page, catálogo etc. con el método de edición por sustitución",
+            "Crea una app, Landing Page, catálogo etc. con el método de adición y extensión por sustitución",
             "Preparando la Certificación Internacional 1: Elements of AI (Helsinki)",
             "Preparando la Certificación Microsoft & LinkedIn Learning: Career Essentials in Generative AI",
             "Google Cloud Skills Boost: Generative AI Fundamentals (Skill Badge)",
@@ -219,10 +219,16 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
         } else if (leccionNum === 10) {
             urlVideo = "https://www.youtube.com/embed/T5kW7mMtca0"; // Nivel 3 - Lección 10: Usando Surge / Netlify para subir Proyectos
         }
-        // Aquí puedes seguir agregando tus demás links de video del Nivel 3 conforme los vayas subiendo:
-        // else if (leccionNum === 11) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     } else if (nivel === 4) {
-        // Aquí irán tus videos del Nivel 4
+        if (leccionNum === 1) {
+            urlVideo = "https://www.youtube.com/embed/t04KjDdMR7Y"; // Nivel 4 - Lección 1: Crea una app, Landing Page, etc. sin usar la carpeta assets, solo el prompt
+        } else if (leccionNum === 2) {
+            urlVideo = "https://www.youtube.com/embed/VQwhEnVYM3A"; // Nivel 4 - Lección 2: Crea una app, Landing Page, etc. usando la carpeta assets, con tus propios recursos
+        } else if (leccionNum === 3) {
+            urlVideo = "https://www.youtube.com/embed/pObLatxr2EQ"; // Nivel 4 - Lección 3: Crea una app, Landing Page, etc. usando la carpeta assets, y links de videos
+        }
+        // Aquí puedes seguir agregando tus demás links de video del Nivel 4 conforme los vayas subiendo:
+        // else if (leccionNum === 4) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     }
 
     document.getElementById('video-leccion').src = urlVideo;
