@@ -106,8 +106,8 @@ function cargarNombresLeccion(nivel) {
             "Crea una app, Landing Page, etc. sin usar la carpeta assets, solo el promtp",
             "Crea una app, Landing Page, etc. usando la carpeta assets, con tus propios recursos",
             "Crea una app, Landing Page, etc. usando la carpeta assets, y links de videos",
-            "Crea una app, Landing Page, catálogo etc. con el método de edición por sustitución",
-            "Crea una app, Landing Page, catálogo etc. con el método de adición y extensión por sustitución",
+            "Crea una app, Landing Page, catálogo, etc. con el método de edición por sustitución",
+            "Crea una app, Landing Page, catálogo, etc. con el método de adición y extensión por sustitución",
             "Preparando la Certificación Internacional 1: Elements of AI (Helsinki)",
             "Preparando la Certificación Microsoft & LinkedIn Learning: Career Essentials in Generative AI",
             "Google Cloud Skills Boost: Generative AI Fundamentals (Skill Badge)",
@@ -226,9 +226,13 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/VQwhEnVYM3A"; // Nivel 4 - Lección 2: Crea una app, Landing Page, etc. usando la carpeta assets, con tus propios recursos
         } else if (leccionNum === 3) {
             urlVideo = "https://www.youtube.com/embed/pObLatxr2EQ"; // Nivel 4 - Lección 3: Crea una app, Landing Page, etc. usando la carpeta assets, y links de videos
+        } else if (leccionNum === 4) {
+            urlVideo = "https://www.youtube.com/embed/tksCI3CzPXU"; // Nivel 4 - Lección 4: Crea una app, Landing Page, catálogo, etc. con el método de edición por sustitución
+        } else if (leccionNum === 5) {
+            urlVideo = "https://www.youtube.com/embed/2FKpEYeSwus"; // Nivel 4 - Lección 5: Crea una app, Landing Page, catálogo, etc. con el método de adición y extensión por sustitución
         }
         // Aquí puedes seguir agregando tus demás links de video del Nivel 4 conforme los vayas subiendo:
-        // else if (leccionNum === 4) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 6) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     }
 
     document.getElementById('video-leccion').src = urlVideo;
