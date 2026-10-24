@@ -213,7 +213,7 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
         } else if (leccionNum === 7) {
             urlVideo = "https://www.youtube.com/embed/7XATk2Oo69A"; // Nivel 3 - Lección 7: Creación de Una estación de Radio (Vocaroo)
         } else if (leccionNum === 8) {
-            urlVideo = "https://www.youtube.com/embed/3UFVR3klVYY"; // Nivel 3 - Lección 8: Edicion por sustitución en los códigos y carpetas
+            urlVideo = "https://www.youtube.com/embed/Q68aGQSwG1M"; // Nivel 3 - Lección 8: Edicion por sustitución en los códigos y carpetas
         } else if (leccionNum === 9) {
             urlVideo = "https://www.youtube.com/embed/dq7C6WJcUYs"; // Nivel 3 - Lección 9: Edición por Adición y Extensión
         } else if (leccionNum === 10) {
