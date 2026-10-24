@@ -15,6 +15,11 @@ async function mostrarVistaCurso() {
 
     if (resultado.valido) {
         localStorage.setItem('escuela_codigo_activo', codigoGuardado);
+        
+        // Detener el video del home al salir
+        const iframeHome = document.getElementById('home-video');
+        if (iframeHome) iframeHome.src = "";
+
         document.getElementById('view-home').style.display = 'none';
         document.getElementById('view-curso').style.display = 'flex';
         cargarLeccionesNivel(1);
@@ -25,6 +30,10 @@ async function mostrarVistaCurso() {
 }
 
 function mostrarVistaHome() {
+    // Restaurar el video del home al regresar
+    const iframeHome = document.getElementById('home-video');
+    if (iframeHome) iframeHome.src = "https://www.youtube.com/embed/YMvJnRkv_ek";
+
     document.getElementById('view-curso').style.display = 'none';
     document.getElementById('view-home').style.display = 'flex';
 }
