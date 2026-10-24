@@ -345,3 +345,70 @@ async function validarCodigoEscuela(codigoIngresado) {
 window.onload = function() {
     console.log("InnovaPro IA cargado con éxito. Presentación abierta para visitantes.");
 };
+
+// CONTROL DE CANDADO Y GENERACIÓN DE DIPLOMA INSTITUCIONAL
+function generarDiplomaAlumno() {
+    const inputNombre = document.getElementById('input-nombre-alumno');
+    if (!inputNombre) return;
+
+    let nombreGuardado = localStorage.getItem('alumno_nombre_diploma');
+
+    // Si ya existe un nombre guardado, bloqueamos y usamos ese obligatoriamente
+    if (nombreGuardado) {
+        inputNombre.value = nombreGuardado;
+        inputNombre.disabled = true;
+        alert(`Ya tienes un nombre registrado ("${nombreGuardado}"). Por seguridad institucional, no se puede modificar.`);
+    } else {
+        let nombreIngresado = inputNombre.value.trim();
+        if (!nombreIngresado || nombreIngresado.length < 3) {
+            alert("Por favor, escribe tu nombre completo correctamente antes de descargar.");
+            return;
+        }
+        // Guardamos el nombre para siempre en este navegador/dispositivo
+        localStorage.setItem('alumno_nombre_diploma', nombreIngresado);
+        nombreGuardado = nombreIngresado;
+        inputNombre.disabled = true;
+        alert("¡Nombre registrado con éxito! A continuación se generará tu diploma.");
+    }
+
+    // Dibujar y descargar el diploma usando diploma_base.jpg
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    
+    img.crossOrigin = "anonymous";
+    img.src = "diploma_base.jpg"; // Asegúrate de tener este archivo al lado de tu html/script
+
+    img.onload = function() {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+
+        // Configuración del texto del nombre sobre el diploma
+        ctx.font = "bold 55px Arial";
+        ctx.fillStyle = "#111111";
+        ctx.textAlign = "center";
+        
+        ctx.fillText(nombreGuardado.toUpperCase(), canvas.width / 2, 1150);
+
+        // Forzar la descarga automática del archivo resultante
+        const enlace = document.createElement('a');
+        enlace.download = `Diploma_${nombreGuardado.replace(/\s+/g, '_')}.jpg`;
+        enlace.href = canvas.toDataURL('image/jpeg', 0.95);
+        enlace.click();
+    };
+
+    img.onerror = function() {
+        alert("No se pudo cargar la imagen 'diploma_base.jpg'. Verifica que esté en la misma carpeta que tus archivos principales.");
+    };
+}
+
+// Al cargar la página, si ya hay un nombre guardado, bloqueamos el input automáticamente
+window.addEventListener('DOMContentLoaded', () => {
+    const inputNombre = document.getElementById('input-nombre-alumno');
+    const nombreGuardado = localStorage.getItem('alumno_nombre_diploma');
+    if (inputNombre && nombreGuardado) {
+        inputNombre.value = nombreGuardado;
+        inputNombre.disabled = true;
+    }
+});
