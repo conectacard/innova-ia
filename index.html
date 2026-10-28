@@ -100,52 +100,53 @@
         <span class="close" onclick="cerrarModal('modal-programa')">&times;</span>
         <h2>Programa Académico Semestral</h2>
         <div class="modal-body-scroll">
+            
+            <!-- CAJA DE ORIENTACIÓN DE TIEMPOS Y CARGA HORARIA -->
+            <div style="background: #eef9ee; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c3e6cb; text-align: left;">
+                <h4 style="margin-top: 0; color: #2d572c;">⏱️ Organización y Carga Horaria para Alumnos</h4>
+                <p style="font-size: 13px; color: #333; line-height: 1.5; margin: 0;">
+                    Este programa está diseñado como una actividad extracurricular optimizada para el calendario escolar de la SEP (considerando periodos vacacionales y exámenes). 
+                    <br><br>
+                    📌 <strong>Ritmo sugerido:</strong> 2 lecciones por semana (~1 a 2 horas de dedicación total por semana). Con este ritmo constante, el alumno concluirá las 40 lecciones del curso en aproximadamente <strong>4 meses y medio (20 semanas)</strong>, terminando con holgura dentro del semestre escolar sin descuidar sus materias regulares.
+                </p>
+            </div>
+
             <h3>Nivel 1: IA Generativa, Despliegue Web y Multimedia Básica (4 Semanas)</h3>
-            <p>LLMs, Prompt Engineering, ChatGPT, Gemini, Perplexity, DeepSeek, Copilot, Vocaroo, Google TTS, Suno, Netlify, Surge y Cloudflare Pages.</p>
+            <p>LLMs, Prompt Engineering, ChatGPT, Gemini, Perplexity, DeepSeek, Copilot, Vocaroo, Google TTS, Suno, Netlify, Surge y Cloudflare Pages. <em>(Ritmo: 2 lecciones por semana / ~2 horas semanales).</em></p>
+            
             <h3>Nivel 2: Creatividad Visual, Presentaciones y Multimedia Sintética (4 Semanas)</h3>
-            <p>DALL-E 3, Leonardo AI, Gamma.app, Clipchamp, Descript, Meshy AI, Spline, Pika, Veo y videos de idiomas educativos.</p>
+            <p>DALL-E 3, Leonardo AI, Gamma.app, Clipchamp, Descript, Meshy AI, Spline, Pika, Veo y videos de idiomas educativos. <em>(Ritmo: 2 lecciones por semana / ~2 horas semanales).</em></p>
+            
             <h3>Nivel 3: Desarrollo Web con VS Code (5 Semanas)</h3>
-            <p>Instalación de VS Code, HTML5, CSS3, JavaScript, asistentes de IA (Copilot/DeepSeek) y PWAs locales.</p>
-            <h3>Nivel 4: 15 Proyectos Reales / Talleres (6 Semanas)</h3>
-            <p>Landing pages, memoramas, calculadoras, CRM escolar, calendarios, quizzes, reproductores, tarjetas digitales, estación de radio web, video de idiomas, presentación en Gamma.app y PWA final desplegada.</p>
+            <p>Instalación de VS Code, HTML5, CSS3, JavaScript, asistentes de IA (Copilot/DeepSeek) y PWAs locales. <em>(Ritmo: 2 lecciones por semana / ~2 horas semanales).</em></p>
+            
+            <h3>Nivel 4: Creación Avanzada, Sustitución y Certificación Internacional (7 Semanas)</h3>
+            <p>Creación de aplicaciones web sin assets y con assets (imágenes cuadradas 400x400, logotipos y videos de YouTube), métodos de edición por sustitución y adición/extensión por sustitución, despliegue en red, portafolio PWA y preparación para la certificación oficial <em>Elements of AI</em> (Universidad de Helsinki). <em>(Ritmo: 2 lecciones por semana / ~2 horas semanales).</em></p>
+            
         </div>
     </div>
 </div>
 
     <div id="modal-certificados" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="cerrarModal('modal-certificados')">&times;</span>
-            <h2>Diplomas e Insignias Oficiales</h2>
-            <div class="modal-body-scroll">
-                <h3>Diplomas Internos Nominativos (Emisión Institucional PDF)</h3>
-                <ul>
-                    <li>Nivel 1: Fundamentos de IA Generativa.</li>
-                    <li>Nivel 2: Creación Visual y Gráficos 3D.</li>
-                    <li>Nivel 3: Desarrollo Web Base en VS Code.</li>
-                    <li><strong>Nivel Máster (Nivel 4): Creador de Aplicaciones Web con IA.</strong></li>
-                </ul>
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal('modal-certificados')">&times;</span>
+        <h2>Diplomas e Insignias Oficiales</h2>
+        <div class="modal-body-scroll">
+            <h3>Diplomas Internos Nominativos (Emisión Institucional PDF)</h3>
+            <ul>
+                <li>Nivel 1: Fundamentos de IA Generativa.</li>
+                <li>Nivel 2: Creación Visual y Gráficos 3D.</li>
+                <li>Nivel 3: Desarrollo Web Base en VS Code.</li>
+                <li><strong>Nivel Máster (Nivel 4): Creador de Aplicaciones Web con IA.</strong></li>
+            </ul>
 
-                <!-- SECCIÓN PROTEGIDA DE DESCARGA DE DIPLOMA -->
-                <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid #ddd;">
-                    <h4 style="margin-top: 0; color: #333;">🎓 Descarga tu Diploma (Nivel 4)</h4>
-                    <p style="font-size: 13px; color: #666; line-height: 1.4;">
-                        ⚠️ <em>"Recuerda que el Diploma podrás descargarlo las veces que desees, pero solo con el nombre que escribas la primera vez, así que escribe muy bien tu nombre completo."</em>
-                    </p>
-                    <div style="margin-bottom: 10px;">
-                        <input type="text" id="input-nombre-alumno" placeholder="Escribe tu Nombre Completo" style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
-                    </div>
-                    <button onclick="generarDiplomaAlumno()" style="background: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold;">📥 Descargar mi Diploma</button>
-                </div>
-                <h3>Certificaciones Internacionales Globales</h3>
-                <ul>
-                    <li><strong>Cisco Networking Academy:</strong> Introduction to Data Science / AI Basics.</li>
-                    <li><strong>Google Cloud Skills Boost:</strong> Generative AI Fundamentals.</li>
-                    <li><strong>Microsoft & LinkedIn Learning:</strong> Career Essentials in Generative AI.</li>
-                    <li><strong>Universidad de Helsinki:</strong> Elements of AI.</li>
-                </ul>
-            </div>
+            <h3>Certificaciones Internacionales Globales</h3>
+            <ul>
+                <li><strong>Universidad de Helsinki:</strong> Elements of AI.</li>
+            </ul>
         </div>
     </div>
+</div>
 
     <!-- MODAL: FAQ (PREGUNTAS FRECUENTES) -->
     <div id="modal-faq" class="modal">

@@ -121,7 +121,7 @@ function cargarNombresLeccion(nivel) {
             "Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 3",
             "Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 4",
             "Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 5",
-            "Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 3 Examen final y Cierre de Curso"
+            "Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 6 Examen final y Cierre de Curso"
         ];
     }
 }
