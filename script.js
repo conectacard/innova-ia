@@ -245,9 +245,11 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
             urlVideo = "https://www.youtube.com/embed/-FFFU8MR8n8"; // Nivel 4 - Lección 7: Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 3
         } else if (leccionNum === 8) {
             urlVideo = "https://www.youtube.com/embed/cx03-3IdaJU"; // Nivel 4 - Lección 8: Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 4
+        } else if (leccionNum === 9) {
+            urlVideo = "https://www.youtube.com/embed/M6ntTkXQVUM"; // Nivel 4 - Lección 9: Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 5
         }
         // Aquí puedes seguir agregando tus demás links de video del Nivel 4 conforme los vayas subiendo:
-        // else if (leccionNum === 9) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // else if (leccionNum === 10) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     }
 
     document.getElementById('video-leccion').src = urlVideo;
