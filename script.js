@@ -236,20 +236,22 @@ function seleccionarLeccion(nivel, leccionNum, nombre) {
         } else if (leccionNum === 3) {
             urlVideo = "https://www.youtube.com/embed/pObLatxr2EQ"; // Nivel 4 - Lección 3: Crea una app, Landing Page, etc. usando la carpeta assets, y links de videos
         } else if (leccionNum === 4) {
-            urlVideo = "https://www.youtube.com/embed/tksCI3CzPXU"; // Nivel 4 - Lección 4: Crea una app, Landing Page, catálogo, etc. con el método de edición por sustitución
+            urlVideo = "https://www.youtube.com/embed/wFzDFV7yDWk"; // Nivel 4 - Lección 4: Crea una app, Landing Page, catálogo, etc. con el método de edición por sustitución
         } else if (leccionNum === 5) {
             urlVideo = "https://www.youtube.com/embed/2FKpEYeSwus"; // Nivel 4 - Lección 5: Crea una app, Landing Page, catálogo, etc. con el método de adición y extensión por sustitución
         } else if (leccionNum === 6) {
-            urlVideo = "https://www.youtube.com/embed/GxA-6hi5kVE"; // Nivel 4 - Lección 6: Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 1 y 2
+            urlVideo = "https://www.youtube.com/embed/lgKTzH-FKmI"; // Nivel 4 - Lección 6: Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 1 y 2
         } else if (leccionNum === 7) {
             urlVideo = "https://www.youtube.com/embed/-FFFU8MR8n8"; // Nivel 4 - Lección 7: Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 3
         } else if (leccionNum === 8) {
             urlVideo = "https://www.youtube.com/embed/cx03-3IdaJU"; // Nivel 4 - Lección 8: Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 4
         } else if (leccionNum === 9) {
             urlVideo = "https://www.youtube.com/embed/M6ntTkXQVUM"; // Nivel 4 - Lección 9: Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 5
+        } else if (leccionNum === 10) {
+            urlVideo = "https://www.youtube.com/embed/npgtRfSospE"; // Nivel 4 - Lección 10: Certificación Internacional Elements of AI (Universidad de Helsinki) Cap 6 Examen final y Cierre de Curso
         }
-        // Aquí puedes seguir agregando tus demás links de video del Nivel 4 conforme los vayas subiendo:
-        // else if (leccionNum === 10) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
+        // Aquí puedes seguir agregando tus demás links de video conforme los vayas subiendo:
+        // else if (leccionNum === 11) { urlVideo = "https://www.youtube.com/embed/OTRO_ID"; }
     }
 
     document.getElementById('video-leccion').src = urlVideo;
