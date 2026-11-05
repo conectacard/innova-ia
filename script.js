@@ -32,7 +32,7 @@ async function mostrarVistaCurso() {
 function mostrarVistaHome() {
     // Restaurar el video del home al regresar
     const iframeHome = document.getElementById('home-video');
-    if (iframeHome) iframeHome.src = "https://www.youtube.com/embed/YMvJnRkv_ek";
+    if (iframeHome) iframeHome.src = "https://www.youtube.com/embed/-pKuou81xsU";
 
     document.getElementById('view-curso').style.display = 'none';
     document.getElementById('view-home').style.display = 'flex';
